@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -62,11 +63,30 @@ fun Visitor(modifier : Modifier = Modifier) {
 }
 
 @Composable
+fun Header(modifier : Modifier = Modifier) {
+    val image = painterResource(R.drawable.logo_vinilapp)
+
+    Box(modifier) {
+        Image(
+            painter = image
+            , contentDescription = null
+        )
+        Text(text = "VinilApp")
+    }
+}
+
+@Composable
 fun InitialMenu(modifier : Modifier = Modifier) {
     Column (
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.SpaceAround
         , modifier = modifier
     ) {
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween
+            , modifier = Modifier.align(Alignment.CenterHorizontally)
+        ) {
+            Header(modifier = modifier)
+        }
         Row(
             horizontalArrangement = Arrangement.SpaceBetween
             , modifier = Modifier.align(Alignment.CenterHorizontally)
