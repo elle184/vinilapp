@@ -89,9 +89,68 @@ fun coleccionistas(
         )
     }
 }
+@Composable
+fun HeaderOptionsMenu(modifier : Modifier = Modifier) {
+    val image = painterResource(R.drawable.logo_vinilapp)
+
+    Box(modifier) {
+        Image(
+            painter = image
+            , contentDescription = null
+        )
+    }
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun InitialOptionMenu(
+    navController : NavHostController
+    , modifier : Modifier = Modifier) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                    , titleContentColor = MaterialTheme.colorScheme.primary
+                ),
+                title = {
+                    Text(
+                        text = "VinilApp"
+                        , style = MaterialTheme.typography.bodyLarge)
+                }, navigationIcon = {
+                    HeaderOptionsMenu(modifier = Modifier.size(60.dp))
+                }
+            )
+        }
+    ) {
+            innerPadding -> Column(
+        modifier = Modifier.padding(innerPadding)
+        , verticalArrangement = Arrangement.Center
+    ) {
+        Column (
+            verticalArrangement = Arrangement.Center
+            , modifier = modifier
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween
+                , modifier = Modifier.align(Alignment.CenterHorizontally)
+            ) {
+                ImageWithNavigationOptionsMenu(
+                    painter = painterResource(id = R.drawable.album)
+                    , onClick = { navController.navigate("OptionsMenu") })
+                ImageWithNavigationOptionsMenu(
+                    painter = painterResource(id = R.drawable.artistas)
+                    , onClick = { navController.navigate("OptionsMenu") })
+                ImageWithNavigationOptionsMenu(
+                    painter = painterResource(id = R.drawable.coleccionista)
+                    , onClick = { navController.navigate("OptionsMenu") })
+            }
+        }
+    }
+    }
+}
 
 @Composable
-fun ImageWithNavigationOptionsMenu(painter : Painter, onClick : () -> Unit) {
+fun ImageWithNavigationOptionsMenu (painter : Painter, onClick : () -> Unit) {
     Image(
         painter = painter,
         contentDescription = null,
