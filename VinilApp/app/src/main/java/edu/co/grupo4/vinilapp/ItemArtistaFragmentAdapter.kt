@@ -29,7 +29,7 @@ class ItemArtistaFragmentAdapter : RecyclerView.Adapter<ItemArtistaFragmentAdapt
             it.artista=artistas[position]
         }
         holder.viewDataBinding.root.setOnClickListener{
-            holder.viewDataBinding.root.findNavController().navigate(action)
+            //holder.viewDataBinding.root.findNavController().navigate(action)
         }
     }
 

@@ -12,7 +12,7 @@ import org.json.JSONArray
 
 class ServiceAdapterArtista constructor(context: Context) {
     companion object{
-        const val BASE_URL= "http:localhost:3000"
+        const val BASE_URL= "http:localhost:3000/musicians"
         var instance: ServiceAdapterArtista? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this){
