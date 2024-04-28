@@ -16,7 +16,7 @@ import com.android.volley.RequestQueue
 
 class NetworkServiceAdapter constructor(context: Context) {
     companion object{
-        const val BASE_URL= "https://vynils-back-heroku.herokuapp.com/"
+        const val BASE_URL= "https://localhost:3000/collectors"
         var instance: NetworkServiceAdapter? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {
