@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.android.volley.Request
 import com.android.volley.Response
-import edu.co.grupo4.vinilapp.models.Collector
+import edu.co.grupo4.vinilapp.model.Collector
 import org.json.JSONArray
 import org.json.JSONObject
 import com.android.volley.VolleyError

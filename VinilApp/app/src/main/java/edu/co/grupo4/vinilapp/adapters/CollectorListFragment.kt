@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.viniliapp_proyect.R
 
 import edu.co.grupo4.vinilapp.databinding.FragmentCollectorListBinding
 import edu.co.grupo4.vinilapp.model.Collector

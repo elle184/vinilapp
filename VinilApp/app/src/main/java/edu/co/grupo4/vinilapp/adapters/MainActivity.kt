@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         // Get the navigation host fragment from this Activity
         val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.navhostfragment) as NavHostFragment
+            .findFragmentByTag("NavHostFragment") as NavHostFragment
         // Instantiate the navController using the NavHostFragment
         navController = navHostFragment.navController
         // Make sure actions in the ActionBar get propagated to the NavController

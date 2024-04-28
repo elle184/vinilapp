@@ -1,7 +1,7 @@
 package edu.co.grupo4.vinilapp.repositories
 
 import android.app.Application
-import edu.co.grupo4.vinilapp.models.Collector
+import edu.co.grupo4.vinilapp.model.Collector
 import edu.co.grupo4.vinilapp.network.NetworkServiceAdapter
 import com.android.volley.VolleyError
 

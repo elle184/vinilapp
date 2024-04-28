@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="collector" type="edu.co.grupo4.vinilapp.models.Collector"/>
+        <variable name="collector" type="edu.co.grupo4.vinilapp.model.Collector"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
