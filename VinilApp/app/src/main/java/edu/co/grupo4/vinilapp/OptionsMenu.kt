@@ -34,7 +34,7 @@ import androidx.navigation.compose.rememberNavController
 import edu.co.grupo4.vinilapp.ui.theme.VinilAppTheme
 
 
-class MainActivity : ComponentActivity() {
+class OptionsMenu : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -52,20 +52,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Home() {
-    val navController = rememberNavController()
-
-    NavHost(navController, startDestination = "MainActivity") {
-        composable("MainActivity") { InitialMenu(navController) }
-        composable("OptionsMenu") { OptionsMenu() }
-    }
-}
-
-@Composable
-fun MusicCollector(
+fun Album(
     modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.collector)
-    
+    val image = painterResource(R.drawable.album)
+
     Box(modifier) {
         Image(
             painter = image
@@ -75,9 +65,9 @@ fun MusicCollector(
 }
 
 @Composable
-fun Visitor(
+fun artista(
     modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.guest)
+    val image = painterResource(R.drawable.artistas)
 
     Box(modifier) {
         Image(
@@ -88,8 +78,9 @@ fun Visitor(
 }
 
 @Composable
-fun Header(modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.logo_vinilapp)
+fun coleccionistas(
+    modifier : Modifier = Modifier) {
+    val image = painterResource(R.drawable.coleccionista)
 
     Box(modifier) {
         Image(
@@ -99,54 +90,8 @@ fun Header(modifier : Modifier = Modifier) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InitialMenu(
-    navController : NavHostController
-    , modifier : Modifier = Modifier) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
-                    , titleContentColor = MaterialTheme.colorScheme.primary
-                ),
-                title = {
-                    Text(
-                        text = "VinilApp"
-                        , style = MaterialTheme.typography.bodyLarge)
-                }, navigationIcon = {
-                    Header(modifier = Modifier.size(60.dp))
-                }
-            )
-        }
-    ) {
-        innerPadding -> Column(
-            modifier = Modifier.padding(innerPadding)
-            , verticalArrangement = Arrangement.Center
-        ) {
-            Column (
-                verticalArrangement = Arrangement.Center
-                , modifier = modifier
-            ) {
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween
-                    , modifier = Modifier.align(Alignment.CenterHorizontally)
-                ) {
-                    ImageWithNavigation(
-                        painter = painterResource(id = R.drawable.collector)
-                        , onClick = { navController.navigate("OptionsMenu") })
-                    ImageWithNavigation(
-                        painter = painterResource(id = R.drawable.guest)
-                        , onClick = { navController.navigate("OptionsMenu") })
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun ImageWithNavigation(painter : Painter, onClick : () -> Unit) {
+fun ImageWithNavigationOptionsMenu(painter : Painter, onClick : () -> Unit) {
     Image(
         painter = painter,
         contentDescription = null,
@@ -161,7 +106,7 @@ fun ImageWithNavigation(painter : Painter, onClick : () -> Unit) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreviewOptionsMenu() {
     VinilAppTheme {
         Home()
     }
