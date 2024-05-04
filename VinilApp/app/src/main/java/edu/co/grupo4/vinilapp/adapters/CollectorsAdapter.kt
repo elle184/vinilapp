@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.CollectorItemBinding
-import edu.co.grupo4.vinilapp.model.Collector
+import edu.co.grupo4.vinilapp.model.data.Collector
 
 
 class CollectorsAdapter : RecyclerView.Adapter<CollectorsAdapter.CollectorViewHolder>(){

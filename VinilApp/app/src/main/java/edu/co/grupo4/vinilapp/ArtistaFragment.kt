@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.databinding.FragmentArtistaBinding
-import edu.co.grupo4.vinilapp.model.Artista
+import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.view.model.ArtistaViewModel
 
 class ArtistaFragment : Fragment() {

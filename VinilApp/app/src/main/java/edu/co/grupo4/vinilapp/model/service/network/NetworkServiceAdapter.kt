@@ -1,10 +1,10 @@
-package edu.co.grupo4.vinilapp.network
+package edu.co.grupo4.vinilapp.model.service.network
 
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
 import com.android.volley.Response
-import edu.co.grupo4.vinilapp.model.Collector
+import edu.co.grupo4.vinilapp.model.data.Collector
 import org.json.JSONArray
 import org.json.JSONObject
 import com.android.volley.VolleyError
@@ -49,13 +49,13 @@ class NetworkServiceAdapter constructor(context: Context) {
     }
     
     private fun getRequest(path:String, responseListener: Response.Listener<String>, errorListener: Response.ErrorListener): StringRequest {
-        return StringRequest(Request.Method.GET, BASE_URL+path, responseListener,errorListener)
+        return StringRequest(Request.Method.GET, BASE_URL +path, responseListener,errorListener)
     }
     private fun postRequest(path: String, body: JSONObject, responseListener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener ):JsonObjectRequest{
-        return  JsonObjectRequest(Request.Method.POST, BASE_URL+path, body, responseListener, errorListener)
+        return  JsonObjectRequest(Request.Method.POST, BASE_URL +path, body, responseListener, errorListener)
     }
     private fun putRequest(path: String, body: JSONObject, responseListener: Response.Listener<JSONObject>, errorListener: Response.ErrorListener ):JsonObjectRequest{
-        return  JsonObjectRequest(Request.Method.PUT, BASE_URL+path, body, responseListener, errorListener)
+        return  JsonObjectRequest(Request.Method.PUT, BASE_URL +path, body, responseListener, errorListener)
     }
 
 }

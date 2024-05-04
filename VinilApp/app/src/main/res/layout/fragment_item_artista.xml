@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="artista" type="edu.co.grupo4.vinilapp.model.Artista"/>
+        <variable name="artista" type="edu.co.grupo4.vinilapp.model.data.Artista"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

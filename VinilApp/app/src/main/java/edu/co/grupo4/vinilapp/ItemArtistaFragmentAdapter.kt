@@ -4,10 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.databinding.FragmentItemArtistaBinding
-import edu.co.grupo4.vinilapp.model.Artista
+import edu.co.grupo4.vinilapp.model.data.Artista
 
 class ItemArtistaFragmentAdapter : RecyclerView.Adapter<ItemArtistaFragmentAdapter.ArtistaViewHolder>(){
     var artistas: List<Artista> = emptyList()

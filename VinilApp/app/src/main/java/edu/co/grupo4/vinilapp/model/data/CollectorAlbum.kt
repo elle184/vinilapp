@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp.model
+package edu.co.grupo4.vinilapp.model.data
 
 import edu.co.grupo4.vinilapp.model.enums.CollectorAlbumStatus
 

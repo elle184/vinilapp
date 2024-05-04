@@ -1,8 +1,11 @@
 package edu.co.grupo4.vinilapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -34,135 +37,15 @@ import androidx.navigation.compose.rememberNavController
 import edu.co.grupo4.vinilapp.ui.theme.VinilAppTheme
 
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            VinilAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Home()
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        val btnColeccionista = findViewById<Button>(R.id.btnColeccionista)
+        btnColeccionista.setOnClickListener {
+            val intent = Intent(this, OptionsMenu::class.java)
+            startActivity(intent)
         }
-    }
-}
-
-@Composable
-fun Home() {
-    val navController = rememberNavController()
-
-    NavHost(navController, startDestination = "MainActivity") {
-        composable("MainActivity") { InitialMenu(navController) }
-        composable("OptionsMenu") { OptionsMenu() }
-    }
-}
-
-@Composable
-fun MusicCollector(
-    modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.collector)
-    
-    Box(modifier) {
-        Image(
-            painter = image
-            , contentDescription = null
-        )
-    }
-}
-
-@Composable
-fun Visitor(
-    modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.guest)
-
-    Box(modifier) {
-        Image(
-            painter = image
-            , contentDescription = null
-        )
-    }
-}
-
-@Composable
-fun Header(modifier : Modifier = Modifier) {
-    val image = painterResource(R.drawable.logo_vinilapp)
-
-    Box(modifier) {
-        Image(
-            painter = image
-            , contentDescription = null
-        )
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun InitialMenu(
-    navController : NavHostController
-    , modifier : Modifier = Modifier) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
-                    , titleContentColor = MaterialTheme.colorScheme.primary
-                ),
-                title = {
-                    Text(
-                        text = "VinilApp"
-                        , style = MaterialTheme.typography.bodyLarge)
-                }, navigationIcon = {
-                    Header(modifier = Modifier.size(60.dp))
-                }
-            )
-        }
-    ) {
-        innerPadding -> Column(
-            modifier = Modifier.padding(innerPadding)
-            , verticalArrangement = Arrangement.Center
-        ) {
-            Column (
-                verticalArrangement = Arrangement.Center
-                , modifier = modifier
-            ) {
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween
-                    , modifier = Modifier.align(Alignment.CenterHorizontally)
-                ) {
-                    ImageWithNavigation(
-                        painter = painterResource(id = R.drawable.collector)
-                        , onClick = { navController.navigate("OptionsMenu") })
-                    ImageWithNavigation(
-                        painter = painterResource(id = R.drawable.guest)
-                        , onClick = { navController.navigate("OptionsMenu") })
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun ImageWithNavigation(painter : Painter, onClick : () -> Unit) {
-    Image(
-        painter = painter,
-        contentDescription = null,
-        modifier = Modifier
-            .size(150.dp)
-            .clickable { onClick() }
-            .padding(8.dp),
-        alignment = Alignment.Center,
-        contentScale = androidx.compose.ui.layout.ContentScale.Crop,
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    VinilAppTheme {
-        Home()
     }
 }

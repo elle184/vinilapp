@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp.model.logica
+package edu.co.grupo4.vinilapp.model.service
 
 import android.content.Context
 import com.android.volley.Request
@@ -7,7 +7,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.Volley
 import com.android.volley.toolbox.StringRequest
-import edu.co.grupo4.vinilapp.model.Artista
+import edu.co.grupo4.vinilapp.model.data.Artista
 import org.json.JSONArray
 
 class ServiceAdapterArtista constructor(context: Context) {

@@ -1,8 +1,8 @@
-package edu.co.grupo4.vinilapp.repositories
+package edu.co.grupo4.vinilapp.model.repositories
 
 import android.app.Application
-import edu.co.grupo4.vinilapp.model.Collector
-import edu.co.grupo4.vinilapp.network.NetworkServiceAdapter
+import edu.co.grupo4.vinilapp.model.data.Collector
+import edu.co.grupo4.vinilapp.model.service.network.NetworkServiceAdapter
 import com.android.volley.VolleyError
 
 class CollectorRepository (val application: Application){
