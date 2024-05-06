@@ -12,6 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.android.volley.RequestQueue
+import edu.co.grupo4.vinilapp.model.data.Artista
 
 
 class NetworkServiceAdapter constructor(context: Context) {
@@ -47,7 +48,36 @@ class NetworkServiceAdapter constructor(context: Context) {
                 Log.d("", it.message.toString())
             }))
     }
-    
+
+    fun getListaArtistas(onComplete:(resp:List<Artista>)->Unit, onError: (error: VolleyError)->Unit) {
+        requestQueue.add(
+            getRequest("performers",
+                Response.Listener<String> { response ->
+                    val resp = JSONArray(response)
+                    val list = mutableListOf<Artista>()
+                    for (i in 0 until resp.length()) {
+                        val item = resp.getJSONObject(i)
+                        list.add(
+                            i, Artista(
+                                artistaId = item.getInt("id"),
+                                nombre = item.getString("name"),
+                                imagen = item.getString("image"),
+                                descripcion = item.getString("description"),
+                                nacimiento = item.getString("birthDate"),
+                                creacion = item.getString("creationDate"),
+                                tipo = item.getString("type"),
+                                bandaId = item.getInt("bandId")
+                            )
+                        )
+                    }
+                    onComplete(list)
+                },
+                Response.ErrorListener {
+                    onError(it)
+                })
+        )
+    }
+
     private fun getRequest(path:String, responseListener: Response.Listener<String>, errorListener: Response.ErrorListener): StringRequest {
         return StringRequest(Request.Method.GET, BASE_URL +path, responseListener,errorListener)
     }
