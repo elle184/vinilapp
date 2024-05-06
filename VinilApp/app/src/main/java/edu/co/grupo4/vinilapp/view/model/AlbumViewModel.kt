@@ -4,10 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import edu.co.grupo4.vinilapp.model.Album
-import java.lang.IllegalArgumentException
+import edu.co.grupo4.vinilapp.model.data.Album
 
 class AlbumViewModel(application : Application) : AndroidViewModel(application) {
 
