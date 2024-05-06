@@ -6,8 +6,8 @@ import androidx.lifecycle.*
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import edu.co.grupo4.vinilapp.model.Collector
-import edu.co.grupo4.vinilapp.repositories.CollectorRepository
+import edu.co.grupo4.vinilapp.model.data.Collector
+import edu.co.grupo4.vinilapp.model.repositories.CollectorRepository
 
 class CollectorViewModel(application: Application) : AndroidViewModel(application) {
     private val collectorsRepository = CollectorRepository(application)

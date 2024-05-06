@@ -6,8 +6,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import edu.co.grupo4.vinilapp.model.Artista
-import edu.co.grupo4.vinilapp.model.logica.ArtistaRepositorio
+import edu.co.grupo4.vinilapp.model.data.Artista
+import edu.co.grupo4.vinilapp.model.repositories.ArtistaRepositorio
 
 class ArtistaViewModel (application: Application): AndroidViewModel(application) {
     private val artistaRepositorio = ArtistaRepositorio(application)

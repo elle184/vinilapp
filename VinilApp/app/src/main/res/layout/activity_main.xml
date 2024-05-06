@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
-    tools:context=".adapters.MainActivity">
+    tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -14,18 +14,35 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:navigationIcon="@drawable/logo_vinilapp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="VinilApp" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/navhostfragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="64dp"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"
+    <ImageButton
+        android:id="@+id/imgBtnColeccionista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnVisitante"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/music_128" />
+
+    <ImageButton
+        android:id="@+id/imgBtnVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnColeccionista"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/listen_128" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
