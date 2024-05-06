@@ -25,3 +25,6 @@ replay_pid*
 
 # IntelliJ files
 VinilApp/.idea/
+
+# .DS_Store
+.DS_Store
