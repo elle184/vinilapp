@@ -2,7 +2,7 @@ package edu.co.grupo4.vinilapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 
