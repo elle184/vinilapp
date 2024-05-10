@@ -2,6 +2,7 @@ package edu.co.grupo4.vinilapp.view.model
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -11,6 +12,7 @@ import edu.co.grupo4.vinilapp.model.data.Artista
 
 class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Adapter<ListaArtistaAdapter.ViewHolder>(){
 
+    private var onClickListener: OnClickListener? = null
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -25,10 +27,24 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
         holder.image.setImageResource(artistaViewModel.imagen.toInt())
         holder.textViewName.text = artistaViewModel.nombre
         holder.textViewTipo.text = artistaViewModel.tipo
+
+        holder.itemView.setOnClickListener {
+            if (onClickListener != null){
+                onClickListener!!.onClick(position, artistaViewModel)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
         return artistas.size
+    }
+
+    fun setOnClickListener(onClickListener: OnClickListener){
+        this.onClickListener = onClickListener
+    }
+
+    interface OnClickListener {
+        fun onClick(position: Int, model: Artista)
     }
 
     class ViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView){
