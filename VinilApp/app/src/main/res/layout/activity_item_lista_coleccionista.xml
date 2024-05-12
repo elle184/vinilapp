@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="370dp"
+    android:layout_height="80dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="5dp"
+    android:background="#ffebfb"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffebfb"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/name_coleccionista_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/telephone_coleccionista_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Telephone" />
+
+        <TextView
+            android:id="@+id/email_coleccionista_text"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:paddingTop="5dp"
+            android:text="Subtitle" />
+
+    </LinearLayout>
+
+</LinearLayout>

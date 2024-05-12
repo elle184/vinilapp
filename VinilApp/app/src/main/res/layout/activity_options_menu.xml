@@ -7,37 +7,106 @@
     android:textAlignment="center"
     tools:context=".OptionsMenu">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="4dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
+
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENÚ DE OPCIONES"
+            android:textColor="#FFFfff" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <Button
+        android:id="@+id/btnListaArtistas"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginBottom="37dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/artistas"
+        app:layout_constraintBottom_toTopOf="@+id/btnListAlbum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnListAlbum"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="68dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/album"
+        app:layout_constraintBottom_toTopOf="@+id/btnListColeccionista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListaArtistas"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnListColeccionista"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="91dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/collector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListAlbum"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="152dp"
+        android:text="Artistas"
+        android:textColorLink="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="356dp"
-        android:text="La actividad 2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="184dp"
+        android:text="Album"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        app:layout_constraintStart_toEndOf="@+id/btnListAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-    <Button
-        android:id="@+id/btnListaArtistas"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Artistas"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="88dp"
+        android:text="Coleccionista"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        tools:layout_editor_absoluteX="66dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

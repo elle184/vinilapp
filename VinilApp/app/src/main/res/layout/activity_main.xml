@@ -14,35 +14,25 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/logo_vinilapp"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="VinilApp" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <ImageButton
-        android:id="@+id/imgBtnColeccionista"
+    <Button
+        android:id="@+id/btnColeccionista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Coleccionista"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgBtnVisitante"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/music_128" />
+        tools:layout_editor_absoluteX="66dp" />
 
-    <ImageButton
-        android:id="@+id/imgBtnVisitante"
+    <Button
+        android:id="@+id/btnVisitante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Visitante"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnColeccionista"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/listen_128" />
+        app:layout_constraintStart_toEndOf="@+id/btnColeccionista"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

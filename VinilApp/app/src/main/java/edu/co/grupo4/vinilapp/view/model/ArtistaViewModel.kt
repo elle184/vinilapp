@@ -15,7 +15,7 @@ class ArtistaViewModel (application: Application): AndroidViewModel(application)
     val artistaslv : LiveData<List<Artista>>
         get()=artistas
 
-    private var eventNetworkError = MutableLiveData<Boolean>(false)
+    var eventNetworkError = MutableLiveData<Boolean>(false)
     val eventNetworkErrorLv: LiveData<Boolean>
         get()=eventNetworkError
 
@@ -42,10 +42,10 @@ class ArtistaViewModel (application: Application): AndroidViewModel(application)
     }
 
     class Factory(val app: Application): ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        override fun <Artista : ViewModel> create(modelClass: Class<Artista>): Artista {
             if(modelClass.isAssignableFrom(ArtistaViewModel::class.java)){
                 @Suppress("UNCHECKED_CAST")
-                return ArtistaViewModel(app) as T
+                return ArtistaViewModel(app) as Artista
             }
             throw IllegalArgumentException("Unable to construct viewmodel")
         }
