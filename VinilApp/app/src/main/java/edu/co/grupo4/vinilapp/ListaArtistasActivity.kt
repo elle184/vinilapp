@@ -11,13 +11,17 @@ import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.view.model.ListaArtistaAdapter
 
 class ListaArtistasActivity : AppCompatActivity() {
+    //private val viewModel: ArtistaViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         val toolbar = findViewById<Toolbar>(R.id.other_toolbar)
         setContentView(R.layout.activity_lista_artistas)
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+       // viewModel.artistaslv.observe(this, Observer ) = ViewModelProvider(this).get(ArtistaViewModel::class.java)
 
         val data = ArrayList<Artista>()
         val adapter = ListaArtistaAdapter(data)

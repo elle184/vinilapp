@@ -3,21 +3,21 @@ package edu.co.grupo4.vinilapp.model.service.network
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
+import com.android.volley.RequestQueue
 import com.android.volley.Response
-import edu.co.grupo4.vinilapp.model.data.Collector
-import org.json.JSONArray
-import org.json.JSONObject
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.android.volley.RequestQueue
 import edu.co.grupo4.vinilapp.model.data.Artista
+import edu.co.grupo4.vinilapp.model.data.Collector
+import org.json.JSONArray
+import org.json.JSONObject
 
 
 class NetworkServiceAdapter constructor(context: Context) {
     companion object{
-        const val BASE_URL= "https://localhost:3000/collectors"
+        const val BASE_URL= "http://localhost:3000/"
         var instance: NetworkServiceAdapter? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {

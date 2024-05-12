@@ -12,6 +12,12 @@ import edu.co.grupo4.vinilapp.model.data.Artista
 
 class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Adapter<ListaArtistaAdapter.ViewHolder>(){
 
+    var art: List<Artista> = artistas
+    set(value){
+        field=value
+        notifyDataSetChanged()
+    }
+
     private var onClickListener: OnClickListener? = null
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,7 +28,7 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val artistaViewModel = artistas[position]
+        val artistaViewModel = art[position]
 
         holder.image.setImageResource(artistaViewModel.imagen.toInt())
         holder.textViewName.text = artistaViewModel.nombre
@@ -36,7 +42,7 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
     }
 
     override fun getItemCount(): Int {
-        return artistas.size
+        return art.size
     }
 
     fun setOnClickListener(onClickListener: OnClickListener){
