@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/artista_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp" />
+    <data>
+        <variable
+            name="artista"
+            type="edu.co.grupo4.vinilapp.model.data.Artista" />
+    </data>
 
-    <TextView
-        android:id="@+id/name_artista_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/panel"
+        android:layout_width="370dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#ffebfb"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
 
-    <TextView
-        android:id="@+id/tipo_artista_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/artista_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:src="@drawable/logo_vinilapp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffebfb"
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/nameArtistatext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{artista.nombre}" />
+
+            <TextView
+                android:id="@+id/tipoartistatext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="@{artista.tipo}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
