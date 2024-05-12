@@ -3,16 +3,17 @@ package edu.co.grupo4.vinilapp.model.service.network
 import android.content.Context
 import android.util.Log
 import com.android.volley.Request
+import com.android.volley.RequestQueue
 import com.android.volley.Response
-import edu.co.grupo4.vinilapp.model.data.Collector
-import org.json.JSONArray
-import org.json.JSONObject
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.android.volley.RequestQueue
+import edu.co.grupo4.vinilapp.model.data.Album
 import edu.co.grupo4.vinilapp.model.data.Artista
+import edu.co.grupo4.vinilapp.model.data.Collector
+import org.json.JSONArray
+import org.json.JSONObject
 
 
 class NetworkServiceAdapter constructor(context: Context) {
@@ -67,6 +68,30 @@ class NetworkServiceAdapter constructor(context: Context) {
                                 creacion = item.getString("creationDate"),
                                 tipo = item.getString("type"),
                                 bandaId = item.getInt("bandId")
+                            )
+                        )
+                    }
+                    onComplete(list)
+                },
+                Response.ErrorListener {
+                    onError(it)
+                })
+        )
+    }
+
+    fun getListaAlbumes(onComplete:(resp:List<Album>)->Unit, onError: (error: VolleyError)->Unit) {
+        requestQueue.add(
+            getRequest("albums",
+                Response.Listener<String> { response ->
+                    val resp = JSONArray(response)
+                    val list = mutableListOf<Album>()
+                    for (i in 0 until resp.length()) {
+                        val item = resp.getJSONObject(i)
+                        list.add(
+                            i, Album(
+                                id = item.getInt("id"),
+                                name = item.getString("name"),
+                                cover = item.getString("cover")
                             )
                         )
                     }
