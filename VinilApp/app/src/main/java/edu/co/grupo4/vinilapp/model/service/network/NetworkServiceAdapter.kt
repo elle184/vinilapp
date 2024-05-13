@@ -64,10 +64,8 @@ class NetworkServiceAdapter constructor(context: Context) {
                                 nombre = item.getString("name"),
                                 imagen = item.getString("image"),
                                 descripcion = item.getString("description"),
-                                nacimiento = item.getString("birthDate"),
-                                creacion = item.getString("creationDate"),
-                                tipo = item.getString("type"),
-                                bandaId = item.getInt("bandId")
+                                nacimiento = item.getString("birthDate")
+
                             )
                         )
                     }

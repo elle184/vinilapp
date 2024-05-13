@@ -30,7 +30,7 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <Button
+    <ImageButton
         android:id="@+id/btnListaArtistas"
         android:layout_width="83dp"
         android:layout_height="91dp"

@@ -40,12 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{artista.nombre}" />
 
-            <TextView
-                android:id="@+id/tipoartistatext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:text="@{artista.tipo}" />
+
 
         </LinearLayout>
 

@@ -27,9 +27,9 @@ class DetalleArtistaActivity : AppCompatActivity() {
 
         if(artista!=null){
             binding?.title?.text=artista!!.nombre
-            binding?.subhead?.text=artista!!.tipo
             binding?.date?.text=artista!!.nacimiento
             binding?.body?.text=artista!!.descripcion
+
 
         }
     }

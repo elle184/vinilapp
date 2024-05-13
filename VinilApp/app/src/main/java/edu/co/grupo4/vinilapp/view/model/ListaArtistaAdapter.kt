@@ -32,7 +32,7 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
 
         holder.image.setImageResource(artistaViewModel.imagen.toInt())
         holder.textViewName.setText(artistaViewModel.nombre)
-        holder.textViewTipo.setText(artistaViewModel.tipo)
+
 
         holder.itemView.setOnClickListener {
             if (onClickListener != null){
@@ -56,6 +56,6 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
     class ViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView){
         val image: ImageView = itemView.findViewById(R.id.artista_image)
         val textViewName: TextView = itemView.findViewById(R.id.nameArtistatext)
-        val textViewTipo: TextView = itemView.findViewById(R.id.tipoartistatext)
+
     }
 }

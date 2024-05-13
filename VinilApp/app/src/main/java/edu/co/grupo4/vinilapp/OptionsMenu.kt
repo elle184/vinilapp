@@ -2,7 +2,6 @@ package edu.co.grupo4.vinilapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 
@@ -12,7 +11,7 @@ class OptionsMenu : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_options_menu)
 
-        val btnListArtistas = findViewById<Button>(R.id.btnListaArtistas)
+        val btnListArtistas = findViewById<ImageButton>(R.id.btnListaArtistas)
         btnListArtistas.setOnClickListener {
             val intent = Intent(this, ListaArtistasActivity::class.java)
             startActivity(intent)

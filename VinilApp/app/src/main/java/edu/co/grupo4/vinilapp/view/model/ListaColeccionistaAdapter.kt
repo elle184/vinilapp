@@ -12,6 +12,11 @@ import edu.co.grupo4.vinilapp.model.data.Collector
 class ListaColeccionistaAdapter(private val coleccionistas: List<Collector>): RecyclerView.Adapter<ListaColeccionistaAdapter.ViewHolder>(){
 
     private var onClickListener: OnClickListener? = null
+    var col: List<Collector> = coleccionistas
+        set(value){
+            field=value
+            notifyDataSetChanged()
+        }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
