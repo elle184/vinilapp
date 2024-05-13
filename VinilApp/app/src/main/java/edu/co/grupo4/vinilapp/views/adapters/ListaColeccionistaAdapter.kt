@@ -1,8 +1,7 @@
-package edu.co.grupo4.vinilapp.view.model
+package edu.co.grupo4.vinilapp.views.adapters
 
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,10 +11,15 @@ import edu.co.grupo4.vinilapp.model.data.Collector
 class ListaColeccionistaAdapter(private val coleccionistas: List<Collector>): RecyclerView.Adapter<ListaColeccionistaAdapter.ViewHolder>(){
 
     private var onClickListener: OnClickListener? = null
+    var col: List<Collector> = coleccionistas
+        set(value){
+            field=value
+            notifyDataSetChanged()
+        }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ListaColeccionistaAdapter.ViewHolder {
+    ): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_lista_coleccionista, parent, false)
         return ViewHolder(view)
     }

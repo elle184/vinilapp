@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
-    tools:context=".OptionsMenu">
+    tools:context=".views.OptionsMenu">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -30,7 +30,7 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <Button
+    <ImageButton
         android:id="@+id/btnListaArtistas"
         android:layout_width="83dp"
         android:layout_height="91dp"
@@ -82,6 +82,10 @@
         android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+  
+
+
+
 
     <TextView
         android:id="@+id/textView2"
@@ -110,3 +114,6 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    
+

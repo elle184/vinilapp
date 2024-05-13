@@ -6,7 +6,5 @@ data class Artista(
     val imagen: String,
     val descripcion: String,
     val nacimiento: String,
-    val creacion: String,
-    val tipo: String,
-    val bandaId: Int
+
 )

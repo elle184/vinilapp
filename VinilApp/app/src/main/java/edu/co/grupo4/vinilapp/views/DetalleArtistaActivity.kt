@@ -1,9 +1,10 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding
 import edu.co.grupo4.vinilapp.model.data.Artista
 
@@ -26,10 +27,10 @@ class DetalleArtistaActivity : AppCompatActivity() {
         }
 
         if(artista!=null){
-            binding?.title?.text=artista!!.nombre
-            binding?.subhead?.text=artista!!.tipo
-            binding?.date?.text=artista!!.nacimiento
-            binding?.body?.text=artista!!.descripcion
+            binding?.title?.text=artista.nombre
+            binding?.date?.text=artista.nacimiento
+            binding?.body?.text=artista.descripcion
+
 
         }
     }

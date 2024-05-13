@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ListaArtistasActivity">
+    tools:context=".views.ListaAlbumesActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/other_toolbar"
+        android:id="@+id/another_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -20,18 +19,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ARTISTAS"
+            android:text="ÁLBUMES"
             android:textColor="#FFFfff"
             android:id="@+id/toolbar_title" />
-        </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_view_album"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#74D2CCDD"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="-16dp"
-        tools:listitem="@layout/activity_item_lista_artista" />
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/activity_item_lista_album"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
