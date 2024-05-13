@@ -47,7 +47,7 @@ class ArtistaViewModel (application: Application): AndroidViewModel(application)
             if (modelClass.isAssignableFrom(ArtistaViewModel::class.java)){
 
                 @Suppress("UNCHECKED_CAST")
-                return ArtistaViewModel(app) as Artista
+                return ArtistaViewModel(app) as T
             }
             throw IllegalArgumentException("Unable to construct viewmodel")
         }

@@ -25,6 +25,12 @@ class OptionsMenu : ComponentActivity() {
             val intent = Intent(this, ListaColeccionistaActivity::class.java)
             startActivity(intent)
         }
+        val btnListaAlbum = findViewById<ImageButton>(R.id.btnListAlbum)
+        btnListaAlbum.setOnClickListener {
+            val intent = Intent(this, ListaAlbumesActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
 

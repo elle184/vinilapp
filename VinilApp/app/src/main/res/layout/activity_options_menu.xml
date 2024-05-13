@@ -83,16 +83,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
   
-  <ImageButton
-        android:id="@+id/btnListaArtistas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Artistas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        tools:layout_editor_absoluteX="66dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
     <TextView

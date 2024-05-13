@@ -54,7 +54,7 @@ class NetworkServiceAdapter constructor(context: Context) {
     }
 
     fun getListaArtistas(onComplete:(resp:List<Artista>)->Unit, onError: (error: VolleyError)->Unit) {
- feature/HU05
+
         instance.add(
             getRequest("musicians",
 
@@ -86,7 +86,7 @@ class NetworkServiceAdapter constructor(context: Context) {
     }
 
     fun getListaAlbumes(onComplete:(resp:List<Album>)->Unit, onError: (error: VolleyError)->Unit) {
-        requestQueue.add(
+        instance.add(
             getRequest("albums",
                 Response.Listener<String> { response ->
                     val resp = JSONArray(response)
