@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 
 import androidx.activity.ComponentActivity
+import edu.co.grupo4.vinilapp.R
 
 
 class OptionsMenu : ComponentActivity() {

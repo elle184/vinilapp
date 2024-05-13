@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 
 import androidx.appcompat.app.AppCompatActivity
+import edu.co.grupo4.vinilapp.R
 
 
 class MainActivity : AppCompatActivity() {

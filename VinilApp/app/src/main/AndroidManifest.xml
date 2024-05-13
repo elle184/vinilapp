@@ -13,26 +13,26 @@
         android:theme="@style/Theme.VinilApp"
         tools:targetApi="31">
         <activity
-            android:name=".DetalleColeccionistaActivity"
+            android:name=".views.DetalleColeccionistaActivity"
             android:exported="false" />
         <activity
-            android:name=".ListaColeccionistaActivity"
+            android:name=".views.ListaColeccionistaActivity"
             android:exported="false" />
         <activity
-            android:name=".DetalleArtistaActivity"
+            android:name=".views.DetalleArtistaActivity"
             android:exported="false" />
         <activity
             android:name=".ItemListaArtista"
             android:exported="false" />
         <activity
-            android:name=".ListaArtistasActivity"
+            android:name=".views.ListaArtistasActivity"
             android:exported="false" />
         <activity
-            android:name=".OptionsMenu"
+            android:name=".views.OptionsMenu"
             android:exported="false"
             android:theme="@style/Theme.VinilApp" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.VinilApp">

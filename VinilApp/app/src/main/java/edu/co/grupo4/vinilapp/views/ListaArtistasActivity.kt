@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 
 import android.content.Intent
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityListaArtistasBinding
 import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.view.model.ArtistaViewModel

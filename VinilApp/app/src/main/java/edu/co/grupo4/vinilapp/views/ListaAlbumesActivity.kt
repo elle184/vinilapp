@@ -1,9 +1,10 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Album
 import edu.co.grupo4.vinilapp.view.model.ListaAlbumAdapter
 
