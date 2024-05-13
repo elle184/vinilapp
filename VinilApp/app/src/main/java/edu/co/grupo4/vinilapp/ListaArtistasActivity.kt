@@ -1,5 +1,6 @@
 package edu.co.grupo4.vinilapp
 
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -55,5 +56,9 @@ class ListaArtistasActivity : AppCompatActivity() {
 
     companion object{
         val NEXT_SCREEN="details_screen"
+
+
+
+
     }
 }

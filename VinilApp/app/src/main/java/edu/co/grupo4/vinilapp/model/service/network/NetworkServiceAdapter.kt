@@ -9,6 +9,9 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+
+import edu.co.grupo4.vinilapp.model.data.Album
+
 import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.model.data.Collector
 import org.json.JSONArray
@@ -51,8 +54,10 @@ class NetworkServiceAdapter constructor(context: Context) {
     }
 
     fun getListaArtistas(onComplete:(resp:List<Artista>)->Unit, onError: (error: VolleyError)->Unit) {
+ feature/HU05
         instance.add(
             getRequest("musicians",
+
                 Response.Listener<String> { response ->
                     val resp = JSONArray(response)
                     val list = mutableListOf<Artista>()
@@ -60,11 +65,39 @@ class NetworkServiceAdapter constructor(context: Context) {
                         val item = resp.getJSONObject(i)
                         list.add(
                             i, Artista(
+
                                 Id = item.getInt("id"),
                                 nombre = item.getString("name"),
                                 imagen = item.getString("image"),
                                 descripcion = item.getString("description"),
                                 nacimiento = item.getString("birthDate")
+
+
+                                
+                            )
+                        )
+                    }
+                    onComplete(list)
+                },
+                Response.ErrorListener {
+                    onError(it)
+                })
+        )
+    }
+
+    fun getListaAlbumes(onComplete:(resp:List<Album>)->Unit, onError: (error: VolleyError)->Unit) {
+        requestQueue.add(
+            getRequest("albums",
+                Response.Listener<String> { response ->
+                    val resp = JSONArray(response)
+                    val list = mutableListOf<Album>()
+                    for (i in 0 until resp.length()) {
+                        val item = resp.getJSONObject(i)
+                        list.add(
+                            i, Album(
+                                id = item.getInt("id"),
+                                name = item.getString("name"),
+                                cover = item.getString("cover")
 
                             )
                         )

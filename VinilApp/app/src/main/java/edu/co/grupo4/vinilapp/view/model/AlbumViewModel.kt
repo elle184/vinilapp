@@ -4,42 +4,48 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import edu.co.grupo4.vinilapp.model.data.Album
+import edu.co.grupo4.vinilapp.model.repositories.AlbumRepositorio
 
 class AlbumViewModel(application : Application) : AndroidViewModel(application) {
+    private val albumRepositorio = AlbumRepositorio(application)
+    private val albums = MutableLiveData<List<Album>>()
 
-    private val _albums : MutableLiveData<List<Album>>
-        get() = _albums
+    val albumslv : LiveData<List<Album>>
+        get()=albums
 
-    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    private var eventNetworkError = MutableLiveData<Boolean>(false)
 
-    val eventNetworkError : LiveData<Boolean>
-        get() = _eventNetworkError
+    val eventNetworkErrorLv : LiveData<Boolean>
+        get() = eventNetworkError
 
-    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+    private var isNetworkErrorShown = MutableLiveData<Boolean>(false)
 
-    val isNetworkErrorShown : LiveData<Boolean>
-            get() = _isNetworkErrorShown
+    val isNetworkErrorShownLv : LiveData<Boolean>
+            get() = isNetworkErrorShown
 
     init {
-        //refreshDataFromNetwork()
+        refreshDataFromNetwork()
     }
 
-    /*private fun refreshDataFromNetwork() {
-        NetworkServiceAdapter.getInstance(getApplication()).getAlbums({
-            _albums.postValue(it)
-            _eventNetworkError.value = false
-            _isNetworkErrorShown.value = false }
-        , {
-            _eventNetworkError.value = true })
-    }*/
+    private fun refreshDataFromNetwork() {
+        albumRepositorio.refreshData({
+            albums.postValue(it)
+            eventNetworkError.value=false
+            isNetworkErrorShown.value=false
+        },{
+            eventNetworkError.value=true
+        })
+    }
 
     fun onNetworkErrorShown() {
-        _isNetworkErrorShown.value = true
+        isNetworkErrorShown.value = true
     }
 
-    /*class Factory(val app : Application) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> createModel(modelClass : Class<T>) : T {
+    class Factory(val app : Application) : ViewModelProvider.Factory {
+        fun <T : ViewModel> createModel(modelClass : Class<T>) : T {
             if (modelClass.isAssignableFrom(AlbumViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
                 return AlbumViewModel(app) as T
@@ -47,5 +53,5 @@ class AlbumViewModel(application : Application) : AndroidViewModel(application) 
 
             throw IllegalArgumentException("Unable to build the ViewModel");
         }
-    }*/
+    }
 }
