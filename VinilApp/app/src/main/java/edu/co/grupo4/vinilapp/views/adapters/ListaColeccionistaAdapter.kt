@@ -1,8 +1,7 @@
-package edu.co.grupo4.vinilapp.view.model
+package edu.co.grupo4.vinilapp.views.adapters
 
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +19,7 @@ class ListaColeccionistaAdapter(private val coleccionistas: List<Collector>): Re
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ListaColeccionistaAdapter.ViewHolder {
+    ): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_lista_coleccionista, parent, false)
         return ViewHolder(view)
     }

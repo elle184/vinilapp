@@ -12,7 +12,7 @@ import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityListaArtistasBinding
 import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.view.model.ArtistaViewModel
-import edu.co.grupo4.vinilapp.view.model.ListaArtistaAdapter
+import edu.co.grupo4.vinilapp.views.adapters.ListaArtistaAdapter
 
 class ListaArtistasActivity : AppCompatActivity() {
 

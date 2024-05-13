@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp.view.model
+package edu.co.grupo4.vinilapp.views.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -15,11 +15,11 @@ class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ListaAlbumAdapter.ViewHolder {
+    ): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_lista_album, parent, false)
         return ViewHolder(view)
     }
-    override fun onBindViewHolder(holder: ListaAlbumAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val albumViewModel = albumes[position]
 
         holder.image.setImageResource(albumViewModel.cover.toInt())

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityListaColeccionistaBinding
 import edu.co.grupo4.vinilapp.model.data.Collector
-import edu.co.grupo4.vinilapp.view.model.ListaColeccionistaAdapter
+import edu.co.grupo4.vinilapp.views.adapters.ListaColeccionistaAdapter
 import edu.co.grupo4.vinilapp.viewModels.CollectorViewModel
 
 class ListaColeccionistaActivity : AppCompatActivity() {

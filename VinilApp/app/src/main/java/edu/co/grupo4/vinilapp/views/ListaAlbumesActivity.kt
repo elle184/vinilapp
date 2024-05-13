@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Album
-import edu.co.grupo4.vinilapp.view.model.ListaAlbumAdapter
+import edu.co.grupo4.vinilapp.views.adapters.ListaAlbumAdapter
 
 class ListaAlbumesActivity : AppCompatActivity() {
        override fun onCreate(savedInstanceState: Bundle?) {
