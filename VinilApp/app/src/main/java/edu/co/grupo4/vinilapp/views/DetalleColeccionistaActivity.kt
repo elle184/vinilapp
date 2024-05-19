@@ -28,9 +28,9 @@ class DetalleColeccionistaActivity : AppCompatActivity() {
         }
 
         if(coleccionista!=null){
-            binding?.name?.text=coleccionista!!.name
-            binding?.telephone?.text=coleccionista!!.telephone
-            binding?.email?.text=coleccionista!!.email
+            binding?.name?.text=coleccionista.name
+            binding?.telephone?.text=coleccionista.telephone
+            binding?.email?.text=coleccionista.email
 
         }
     }
