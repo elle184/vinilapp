@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.model.data.Collector
 import edu.co.grupo4.vinilapp.view.model.ListaColeccionistaAdapter
 import edu.co.grupo4.vinilapp.viewModels.CollectorViewModel
+import edu.co.grupo4.vinilapp.views.DetalleColeccionistaActivity
 
 class ListaColeccionistaActivity : AppCompatActivity() {
     private lateinit var adapter: ListaColeccionistaAdapter

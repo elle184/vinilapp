@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import edu.co.grupo4.vinilapp.ListaColeccionistaActivity
 import edu.co.grupo4.vinilapp.R
 
 import edu.co.grupo4.vinilapp.databinding.ActivityDetalleColeccionistaBinding

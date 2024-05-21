@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 
 import androidx.activity.ComponentActivity
+import edu.co.grupo4.vinilapp.ListaColeccionistaActivity
 import edu.co.grupo4.vinilapp.R
 
 
