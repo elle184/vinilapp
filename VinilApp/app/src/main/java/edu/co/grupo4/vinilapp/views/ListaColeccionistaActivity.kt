@@ -1,11 +1,13 @@
 package edu.co.grupo4.vinilapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.co.grupo4.vinilapp.model.data.Collector
 import edu.co.grupo4.vinilapp.view.model.ListaColeccionistaAdapter
 import edu.co.grupo4.vinilapp.viewModels.CollectorViewModel
 
@@ -36,9 +38,19 @@ class ListaColeccionistaActivity : AppCompatActivity() {
                 // Optionally handle if network error is shown
             }
         })
+        adapter.setOnClickListener(object : ListaColeccionistaAdapter.OnClickListener {
+            override fun onClick(position: Int, model: Collector){
+                val intent= Intent(this@ListaColeccionistaActivity, DetalleColeccionistaActivity::class.java)
+                intent.putExtra(NEXT_SCREEN, model)
+                startActivity(intent)
+            }
+
+        })
 
 }
     companion object{
         val NEXT_SCREEN="details_screen"
     }
     }
+
+
