@@ -97,7 +97,8 @@ class NetworkServiceAdapter constructor(context: Context) {
                             i, Album(
                                 id = item.getInt("id"),
                                 name = item.getString("name"),
-                                cover = item.getString("cover")
+                                cover = item.getString("cover"),
+                                description = item.getString("description")
 
                             )
                         )

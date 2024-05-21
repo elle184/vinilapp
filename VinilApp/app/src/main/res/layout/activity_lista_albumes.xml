@@ -29,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#74D2CCDD"
-        app:layoutManager="LinearLayoutManager"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="-16dp"
         tools:listitem="@layout/activity_item_lista_album"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

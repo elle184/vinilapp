@@ -12,6 +12,14 @@ import edu.co.grupo4.vinilapp.model.data.Album
 
 class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<ListaAlbumAdapter.ViewHolder>(){
 
+    private var onClickListener: OnClickListener? = null
+
+    var alb: List<Album> = albumes
+        set(value){
+            field=value
+            notifyDataSetChanged()
+        }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -20,15 +28,36 @@ class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<
         return ViewHolder(view)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val albumViewModel = albumes[position]
+        val albumViewModel = alb[position]
 
         holder.image.setImageResource(albumViewModel.cover.toInt())
-        holder.textViewName.text = albumViewModel.name
+        holder.textViewName.setText(albumViewModel.name)
+
+        holder.itemView.setOnClickListener{
+            if(onClickListener != null){
+                onClickListener!!.onClick(position, albumViewModel)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
-        return albumes.size
+        return alb.size
     }
+
+    fun updateData(newAlbums: List<Album>) {
+        alb= newAlbums
+        notifyDataSetChanged()
+    }
+
+
+    fun setOnclickListener(onClickListener: OnClickListener){
+       this.onClickListener = onClickListener
+    }
+
+    interface OnClickListener{
+        fun onClick(position: Int, model: Album)
+    }
+
     class ViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView){
         val image: ImageView = itemView.findViewById(R.id.album_image)
         val textViewName: TextView = itemView.findViewById(R.id.name_album_text)
