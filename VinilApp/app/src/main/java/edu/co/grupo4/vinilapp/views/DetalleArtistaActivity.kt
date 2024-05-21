@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import coil.load
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding
 import edu.co.grupo4.vinilapp.model.data.Artista
@@ -28,6 +29,7 @@ class DetalleArtistaActivity : AppCompatActivity() {
 
         if(artista!=null){
             binding?.title?.text=artista.nombre
+            binding?.headerImage?.load(artista!!.imagen)
             binding?.date?.text=artista.nacimiento
             binding?.body?.text=artista.descripcion
 

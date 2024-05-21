@@ -15,7 +15,6 @@ class OptionsMenu : ComponentActivity() {
         setContentView(R.layout.activity_options_menu)
 
         val btnListArtistas = findViewById<ImageButton>(R.id.btnListaArtistas)
-
         btnListArtistas.setOnClickListener {
             val intent = Intent(this, ListaArtistasActivity::class.java)
             startActivity(intent)

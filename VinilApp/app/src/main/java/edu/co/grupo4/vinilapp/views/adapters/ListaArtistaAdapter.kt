@@ -42,6 +42,12 @@ class ListaArtistaAdapter(private val artistas: List<Artista>): RecyclerView.Ada
 
     override fun getItemCount(): Int {
         return art.size
+
+    }
+
+    fun updateData(newArtistas: List<Artista>) {
+        art = newArtistas
+        notifyDataSetChanged()
     }
 
     fun setOnClickListener(onClickListener: OnClickListener){
