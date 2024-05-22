@@ -5,18 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import coil.load
-import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding
 import edu.co.grupo4.vinilapp.model.data.Artista
 
 class DetalleArtistaActivity : AppCompatActivity() {
 
-    var binding: ActivityDetalleArtistaBinding?=null
+    private var binding: ActivityDetalleArtistaBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityDetalleArtistaBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_detalle_artista)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        setContentView(binding?.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding?.main!!) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -32,8 +32,11 @@ class DetalleArtistaActivity : AppCompatActivity() {
             binding?.headerImage?.load(artista!!.imagen)
             binding?.date?.text=artista.nacimiento
             binding?.body?.text=artista.descripcion
-
-
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }

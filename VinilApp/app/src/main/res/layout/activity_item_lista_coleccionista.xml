@@ -12,11 +12,11 @@
         android:layout_width="370dp"
         android:layout_height="80dp"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginBottom="5dp"
         android:background="#ffebfb"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:paddingLeft="0dp">
 
 
 
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:background="#ffebfb"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="0dp">
 
             <TextView
                 android:id="@+id/name_coleccionista_text"
