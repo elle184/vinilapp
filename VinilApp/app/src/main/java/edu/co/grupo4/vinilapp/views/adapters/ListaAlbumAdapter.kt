@@ -1,5 +1,6 @@
 package edu.co.grupo4.vinilapp.views.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,9 @@ import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Album
 
 
-class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<ListaAlbumAdapter.ViewHolder>(){
+class ListaAlbumAdapter(private var albumes: List<Album>): RecyclerView.Adapter<ListaAlbumAdapter.ViewHolder>(){
 
-    private var onClickListener: OnClickListener? = null
+    private var onClickListener: ListaAlbumAdapter.OnClickListener? = null
 
     var alb: List<Album> = albumes
         set(value){
@@ -23,12 +24,13 @@ class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_lista_album, parent, false)
-        return ViewHolder(view)
+    ): ListaAlbumAdapter.ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view = inflater.inflate(R.layout.activity_item_lista_album, parent, false)
+        return ListaAlbumAdapter.ViewHolder(view)
     }
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val albumViewModel = alb[position]
+    override fun onBindViewHolder(holder: ListaAlbumAdapter.ViewHolder, position: Int) {
+        val albumViewModel = albumes[position]
 
         holder.image.setImageResource(albumViewModel.cover.toInt())
         holder.textViewName.setText(albumViewModel.name)
@@ -40,17 +42,15 @@ class ListaAlbumAdapter(private val albumes: List<Album>): RecyclerView.Adapter<
         }
     }
 
-    override fun getItemCount(): Int {
-        return alb.size
-    }
+    override fun getItemCount(): Int = albumes.size
 
-    fun updateData(newAlbums: List<Album>) {
-        alb= newAlbums
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(newAlbum: List<Album>) {
+        albumes = newAlbum
         notifyDataSetChanged()
     }
 
-
-    fun setOnclickListener(onClickListener: OnClickListener){
+    fun setOnClickListener(onClickListener: OnClickListener){
        this.onClickListener = onClickListener
     }
 

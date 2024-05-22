@@ -3,14 +3,12 @@ package edu.co.grupo4.vinilapp.views
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.R
-import edu.co.grupo4.vinilapp.databinding.ActivityListaAlbumesBinding
 import edu.co.grupo4.vinilapp.model.data.Album
 import edu.co.grupo4.vinilapp.view.model.AlbumViewModel
 import edu.co.grupo4.vinilapp.views.adapters.ListaAlbumAdapter
@@ -19,14 +17,7 @@ class ListaAlbumesActivity : AppCompatActivity() {
     private lateinit var adapter: ListaAlbumAdapter
     private lateinit var albumViewModel: AlbumViewModel
        override fun onCreate(savedInstanceState: Bundle?) {
-
            super.onCreate(savedInstanceState)
-           enableEdgeToEdge()
-           val binding= ActivityListaAlbumesBinding.inflate(layoutInflater)
-           setContentView(binding.root)
-
-          // val viewModel: AlbumViewModel by viewModels()
-
            setContentView(R.layout.activity_lista_albumes)
 
            val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_album)
@@ -53,7 +44,7 @@ class ListaAlbumesActivity : AppCompatActivity() {
            }
            })
 
-           adapter.setOnclickListener(object: ListaAlbumAdapter.OnClickListener{
+           adapter.setOnClickListener(object: ListaAlbumAdapter.OnClickListener{
                override fun onClick(position: Int, model: Album){
                    val intent= Intent(this@ListaAlbumesActivity, DetalleAlbumActivity::class.java)
                    intent.putExtra(NEXT_SCREEN, model)

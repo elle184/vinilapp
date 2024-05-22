@@ -2,12 +2,10 @@ package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
-
 import android.widget.ImageButton
-
 import androidx.activity.ComponentActivity
-import edu.co.grupo4.vinilapp.ListaColeccionistaActivity
 import edu.co.grupo4.vinilapp.R
+import edu.co.grupo4.vinilapp.views.ListaColeccionistaActivity
 
 
 class OptionsMenu : ComponentActivity() {

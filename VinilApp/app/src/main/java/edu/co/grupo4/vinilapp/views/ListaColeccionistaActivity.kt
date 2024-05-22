@@ -1,4 +1,4 @@
-package edu.co.grupo4.vinilapp
+package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.grupo4.vinilapp.model.data.Collector
+import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.view.model.ListaColeccionistaAdapter
 import edu.co.grupo4.vinilapp.viewModels.CollectorViewModel
-import edu.co.grupo4.vinilapp.views.DetalleColeccionistaActivity
+
 
 class ListaColeccionistaActivity : AppCompatActivity() {
     private lateinit var adapter: ListaColeccionistaAdapter
