@@ -2,13 +2,14 @@ package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import edu.co.grupo4.vinilapp.model.data.Collector
 import edu.co.grupo4.vinilapp.R
+import edu.co.grupo4.vinilapp.model.data.Collector
 import edu.co.grupo4.vinilapp.view.model.ListaColeccionistaAdapter
 import edu.co.grupo4.vinilapp.viewModels.CollectorViewModel
 
@@ -32,12 +33,12 @@ class ListaColeccionistaActivity : AppCompatActivity() {
         })
         coleccionistaViewModel.eventNetworkError.observe(this, Observer { isError ->
             if (isError) {
-                // Handle the network error, show a message or a retry button
+                showToast("Error de red")
             }
         })
         coleccionistaViewModel.isNetworkErrorShown.observe(this, Observer { isShown ->
             if (!isShown) {
-                // Optionally handle if network error is shown
+                showToast("Error de conexión")
             }
         })
         adapter.setOnClickListener(object : ListaColeccionistaAdapter.OnClickListener {
@@ -53,6 +54,11 @@ class ListaColeccionistaActivity : AppCompatActivity() {
     companion object{
         val NEXT_SCREEN="details_screen"
     }
+
+    private fun showToast(message:String){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     }
 
 
