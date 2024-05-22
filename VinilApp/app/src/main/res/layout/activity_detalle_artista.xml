@@ -54,17 +54,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/subhead"
-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="I'm a subhead"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title" />
-
             <ImageView
                 android:id="@+id/header_image"
                 android:layout_width="match_parent"
@@ -73,7 +62,7 @@
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subhead" />
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
             <TextView
                 android:id="@+id/date"

@@ -28,7 +28,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="337dp"
-        android:layout_height="492dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +54,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
 
+            <TextView
+                android:id="@+id/subtitle"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Genre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:ignore="MissingConstraints" />
+
 
             <ImageView
                 android:id="@+id/header_image"
@@ -63,15 +76,15 @@
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintTop_toBottomOf="@id/subtitle" />
 
             <TextView
-                android:id="@+id/songs"
+                android:id="@+id/release"
                 style="@style/TextAppearance.MaterialComponents.Subtitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="I'm a subhead"
+                android:text="Release date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/header_image" />
@@ -85,7 +98,18 @@
                 android:text="I'm a supporting text. Very Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquacia deserunt mollit anim id est laborum."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/songs" />
+                app:layout_constraintTop_toBottomOf="@id/release" />
+
+            <Button
+                android:id="@+id/verTracks"
+                android:layout_width="162dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="20dp"
+                android:text="Agregar Tracks"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/body"
+                tools:ignore="ExtraText,MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

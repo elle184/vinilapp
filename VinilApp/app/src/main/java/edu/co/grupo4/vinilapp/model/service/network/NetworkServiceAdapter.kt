@@ -99,8 +99,9 @@ class NetworkServiceAdapter constructor(context: Context) {
                                 id = item.getInt("id"),
                                 name = item.getString("name"),
                                 cover = item.getString("cover"),
-                                description = item.getString("description")
-
+                                description = item.getString("description"),
+                                releaseDate = item.getString("releaseDate"),
+                                genre = item.getString("genre")
                             )
                         )
                     }

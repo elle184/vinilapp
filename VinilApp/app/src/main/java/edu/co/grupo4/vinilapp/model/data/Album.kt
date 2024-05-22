@@ -5,8 +5,8 @@ data class Album(
     val id : Int
     , val name : String
     , val cover : String
-    //, val releaseDate : Date
+    , val releaseDate : String
     , val description : String
-    //, val genres: Genre
+    , val genre: String
     //, val recordLabel : RecordLabel
     ):Serializable
