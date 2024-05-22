@@ -4,8 +4,6 @@ package edu.co.grupo4.vinilapp.views
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import android.widget.Toolbar
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -22,16 +20,7 @@ class ListaArtistasActivity : AppCompatActivity() {
     private lateinit var artistaViewModel: ArtistaViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val toolbar = findViewById<Toolbar>(R.id.other_toolbar)
-        enableEdgeToEdge()
-        //val binding = ActivityListaArtistasBinding.inflate(layoutInflater)
-        //setContentView(binding.root)
-
-        //val viewModel: ArtistaViewModel by viewModels()
-
         setContentView(R.layout.activity_lista_artistas)
-
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -62,7 +51,7 @@ class ListaArtistasActivity : AppCompatActivity() {
         adapter.setOnClickListener(object : ListaArtistaAdapter.OnClickListener {
             override fun onClick(position: Int, model: Artista){
                 val intent= Intent(this@ListaArtistasActivity, DetalleArtistaActivity::class.java)
-               // intent.putExtra(NEXT_SCREEN, model)
+                intent.putExtra(NEXT_SCREEN, model)
                 startActivity(intent)
             }
 
