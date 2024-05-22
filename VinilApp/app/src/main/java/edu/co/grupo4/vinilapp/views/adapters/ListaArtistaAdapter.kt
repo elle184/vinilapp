@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Artista
 
@@ -30,7 +31,7 @@ class ListaArtistaAdapter(private var artistas: List<Artista>): RecyclerView.Ada
     override fun onBindViewHolder(holder: ListaArtistaAdapter.ViewHolder, position: Int) {
         val artistaViewModel = artistas[position]
 
-        holder.image.setImageResource(artistaViewModel.imagen.toInt())
+        holder.image.load(artistaViewModel.imagen)
         holder.textViewName.setText(artistaViewModel.nombre)
 
 

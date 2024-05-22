@@ -21,7 +21,8 @@ import org.json.JSONObject
 class NetworkServiceAdapter constructor(context: Context) {
     val instance: RequestQueue = Volley.newRequestQueue(context.applicationContext)
     companion object{
-        const val BASE_URL= "http://127.0.0.1:3000/"
+        //const val BASE_URL= "http://127.0.0.1:3000/"
+        const val BASE_URL = "https://backvynils-q6yc.onrender.com/"
         var instance: NetworkServiceAdapter? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {

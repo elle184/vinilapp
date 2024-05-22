@@ -41,7 +41,7 @@ class ListaArtistasActivity : AppCompatActivity() {
               }
         })
         artistaViewModel.isNetworkErrorShownLv.observe(this, Observer{
-                isShown->if(!isShown){
+                isShown->if(isShown){
                     showToast("Error de conexión")
              }
         })

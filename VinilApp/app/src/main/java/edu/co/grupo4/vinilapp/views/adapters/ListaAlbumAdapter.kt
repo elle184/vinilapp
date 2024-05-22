@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Album
 
@@ -32,7 +33,7 @@ class ListaAlbumAdapter(private var albumes: List<Album>): RecyclerView.Adapter<
     override fun onBindViewHolder(holder: ListaAlbumAdapter.ViewHolder, position: Int) {
         val albumViewModel = albumes[position]
 
-        holder.image.setImageResource(albumViewModel.cover.toInt())
+        holder.image.load(albumViewModel.cover)
         holder.textViewName.setText(albumViewModel.name)
 
         holder.itemView.setOnClickListener{

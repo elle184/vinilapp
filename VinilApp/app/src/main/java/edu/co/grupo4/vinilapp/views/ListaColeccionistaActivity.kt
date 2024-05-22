@@ -37,7 +37,7 @@ class ListaColeccionistaActivity : AppCompatActivity() {
             }
         })
         coleccionistaViewModel.isNetworkErrorShown.observe(this, Observer { isShown ->
-            if (!isShown) {
+            if (isShown) {
                 showToast("Error de conexión")
             }
         })
