@@ -27,10 +27,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_album"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:background="#74D2CCDD"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="-16dp"
+        app:layout_constraintTop_toBottomOf="@id/another_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/activity_item_lista_album"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

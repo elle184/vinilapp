@@ -28,9 +28,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:background="#74D2CCDD"
-        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/other_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/activity_item_lista_coleccionista" />
 
 
