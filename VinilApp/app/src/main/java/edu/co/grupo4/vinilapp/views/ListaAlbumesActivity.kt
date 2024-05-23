@@ -2,6 +2,7 @@ package edu.co.grupo4.vinilapp.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -19,6 +20,12 @@ class ListaAlbumesActivity : AppCompatActivity() {
        override fun onCreate(savedInstanceState: Bundle?) {
            super.onCreate(savedInstanceState)
            setContentView(R.layout.activity_lista_albumes)
+
+           val btnCrear = this.findViewById<Button>(R.id.button_crear)
+           btnCrear.setOnClickListener {
+               val intent = Intent(this, CrearAlbumActivity::class.java)
+               startActivity(intent)
+           }
 
            val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_album)
            recyclerView.layoutManager = LinearLayoutManager(this)

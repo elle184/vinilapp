@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VinilApp"
         tools:targetApi="31">
         <activity
+            android:name=".views.CrearAlbumActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.DetalleAlbumActivity"
             android:exported="false" />
         <activity

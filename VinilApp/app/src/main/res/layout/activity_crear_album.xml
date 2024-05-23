@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#74D2CCDD"
+    tools:context=".views.CrearAlbumActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/crear_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREAR ÁLBUM"
+            android:textColor="#FFFfff"
+            android:id="@+id/toolbar_title" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/label_album_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Nombre del Álbum"
+        android:textColor="#330066"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/crear_toolbar" />
+
+    <EditText
+        android:id="@+id/album_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingBottom="10dp"
+        android:singleLine="true"
+        android:textColor="#000011"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="Escriba aquí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_album_name" />
+
+
+    <TextView
+        android:id="@+id/label_genero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Género"
+        android:textColor="#330066"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/album_name" />
+
+    <EditText
+        android:id="@+id/edit_genero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingBottom="10dp"
+        android:singleLine="true"
+        android:textColor="#000011"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="Escriba aquí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_genero" />
+
+    <TextView
+        android:id="@+id/label_imagen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Url Cover"
+        android:textColor="#330066"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_genero" />
+
+
+    <EditText
+        android:id="@+id/edit_imagen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingBottom="10dp"
+        android:singleLine="true"
+        android:textColor="#000011"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="Escriba aquí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_imagen" />
+
+
+    <TextView
+        android:id="@+id/label_descripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Descripción"
+        android:textColor="#330066"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_imagen" />
+
+    <EditText
+        android:id="@+id/edit_descripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#CCCCFF"
+        android:paddingBottom="10dp"
+        android:singleLine="false"
+        android:textColor="#000011"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="Escriba aquí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_descripcion" />
+
+    <Button
+        android:id="@+id/button_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_descripcion" />/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
