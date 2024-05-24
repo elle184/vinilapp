@@ -6,18 +6,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import edu.co.grupo4.vinilapp.views.ListaColeccionistaActivity
 import edu.co.grupo4.vinilapp.R
+import edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding
 
 import edu.co.grupo4.vinilapp.databinding.ActivityDetalleColeccionistaBinding
+import edu.co.grupo4.vinilapp.model.data.Artista
 
 import edu.co.grupo4.vinilapp.model.data.Collector
 
 class DetalleColeccionistaActivity : AppCompatActivity() {
-    var binding: ActivityDetalleColeccionistaBinding?=null
+    private var binding: ActivityDetalleColeccionistaBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityDetalleColeccionistaBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_detalle_coleccionista)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        setContentView(binding?.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding?.main!!) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -34,5 +37,9 @@ class DetalleColeccionistaActivity : AppCompatActivity() {
             binding?.email?.text=coleccionista.email
 
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }
