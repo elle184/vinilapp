@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import edu.co.grupo4.vinilapp.R
 import edu.co.grupo4.vinilapp.model.data.Album
 import edu.co.grupo4.vinilapp.view.model.AlbumViewModel
-import java.util.Date
 
 class CrearAlbumActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,26 +30,38 @@ class CrearAlbumActivity : AppCompatActivity() {
             val genero = findViewById<EditText>(R.id.edit_genero).text.toString()
             val urlImagen = findViewById<EditText>(R.id.edit_imagen).text.toString()
             val descripcion = findViewById<EditText>(R.id.edit_descripcion).text.toString()
+            val release = findViewById<EditText>(R.id.edit_date).text.toString()
 
-            val currentDate = Date().toString()
-            val album = Album(name = albumName, genre = genero, cover = urlImagen, description = descripcion, releaseDate = currentDate, id = 1)
+            if (albumName.isNotEmpty() && genero.isNotEmpty() && urlImagen.isNotEmpty() && descripcion.isNotEmpty() && release.isNotEmpty()) {
 
-            val albumViewModel = ViewModelProvider(this).get(AlbumViewModel::class.java)
-            albumViewModel.crearAlbum(album)
+                val album = Album(
+                    name = albumName,
+                    genre = genero,
+                    cover = urlImagen,
+                    description = descripcion,
+                    releaseDate = release
+                )
+
+                val albumViewModel = ViewModelProvider(this).get(AlbumViewModel::class.java)
+                albumViewModel.crearAlbum(album)
+            }else {
+                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         val albumViewModel = ViewModelProvider(this).get(AlbumViewModel::class.java)
         albumViewModel.successMessageLv.observe(this, Observer { successMessage ->
             if (!successMessage.isNullOrEmpty()) {
                 Toast.makeText(this, successMessage, Toast.LENGTH_SHORT).show()
-                // Puedes agregar cualquier lógica adicional aquí para manejar el mensaje de éxito.
+
             }
         })
 
         albumViewModel.errorMessageLv.observe(this, Observer { errorMessage ->
             if (!errorMessage.isNullOrEmpty()) {
                 Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
-                // Puedes agregar cualquier lógica adicional aquí para manejar el mensaje de error.
+
             }
         })
 
