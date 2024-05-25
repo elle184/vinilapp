@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VinilApp"
         tools:targetApi="31">
         <activity
+            android:name=".views.CrearPremioActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.CrearAlbumActivity"
             android:exported="false" />
         <activity
@@ -36,7 +39,11 @@
             android:name=".views.ListaArtistasActivity"
             android:exported="false" />
         <activity
-            android:name=".views.OptionsMenu"
+            android:name=".views.OptionsMenuUsuario"
+            android:exported="false"
+            android:theme="@style/Theme.VinilApp" />
+        <activity
+            android:name=".views.OptionsMenuColeccionista"
             android:exported="false"
             android:theme="@style/Theme.VinilApp" />
         <activity

@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         val btnColeccionista = findViewById<ImageButton>(R.id.imgBtnColeccionista)
         btnColeccionista.setOnClickListener {
-            val intent = Intent(this, OptionsMenu::class.java)
+            val intent = Intent(this, OptionsMenuColeccionista::class.java)
             startActivity(intent)
         }
 
         val btnVisitante = findViewById<ImageButton>(R.id.imgBtnVisitante)
         btnVisitante.setOnClickListener {
-            val intent = Intent(this, OptionsMenu::class.java)
+            val intent = Intent(this, OptionsMenuUsuario::class.java)
             startActivity(intent)
         }
     }

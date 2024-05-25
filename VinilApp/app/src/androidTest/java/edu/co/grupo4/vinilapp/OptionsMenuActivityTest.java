@@ -17,14 +17,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import edu.co.grupo4.vinilapp.views.MainActivity;
-import edu.co.grupo4.vinilapp.views.OptionsMenu;
+import edu.co.grupo4.vinilapp.views.OptionsMenuUsuario;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class OptionsMenuActivityTest {
 
     @Rule
-    public ActivityScenarioRule<OptionsMenu> omActivityTestRule = new ActivityScenarioRule<>(OptionsMenu.class);
+    public ActivityScenarioRule<OptionsMenuUsuario> omActivityTestRule = new ActivityScenarioRule<>(OptionsMenuUsuario.class);
 
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);

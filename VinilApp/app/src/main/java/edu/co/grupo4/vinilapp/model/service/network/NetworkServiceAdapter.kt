@@ -14,6 +14,7 @@ import edu.co.grupo4.vinilapp.model.data.Album
 
 import edu.co.grupo4.vinilapp.model.data.Artista
 import edu.co.grupo4.vinilapp.model.data.Collector
+import edu.co.grupo4.vinilapp.model.data.Prize
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -135,6 +136,30 @@ class NetworkServiceAdapter constructor(context: Context) {
                 }
             )
         )
+
+
+    }
+
+    fun postPrize(prize: Prize, onComplete: (response: JSONObject) -> Unit, onError: (error: VolleyError) -> Unit) {
+        val albumJson = JSONObject().apply {
+            put("organization", prize.organization)
+            put("name", prize.name)
+            put("description", prize.description)
+        }
+
+        instance.add(
+            postRequest("prizes/",
+                albumJson,
+                Response.Listener { response ->
+                    onComplete(response)
+                },
+                Response.ErrorListener { error ->
+                    onError(error)
+                }
+            )
+        )
+
+
     }
 
 

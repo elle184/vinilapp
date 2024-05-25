@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 import edu.co.grupo4.vinilapp.R
-import edu.co.grupo4.vinilapp.views.ListaColeccionistaActivity
 
 
-class OptionsMenu : ComponentActivity() {
+class OptionsMenuUsuario : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_options_menu)
+        setContentView(R.layout.activity_options_menu_usuario)
 
         val btnListArtistas = findViewById<ImageButton>(R.id.btnListaArtistas)
         btnListArtistas.setOnClickListener {
