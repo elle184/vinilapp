@@ -96,12 +96,13 @@ class NetworkServiceAdapter constructor(context: Context) {
                         val item = resp.getJSONObject(i)
                         list.add(
                             i, Album(
-                                id = item.getInt("id"),
+                                //id = item.getInt("id"),
                                 name = item.getString("name"),
                                 cover = item.getString("cover"),
                                 description = item.getString("description"),
                                 releaseDate = item.getString("releaseDate"),
-                                genre = item.getString("genre")
+                                genre = item.getString("genre"),
+                                recordLabel = item.getString("recordLabel")
                             )
                         )
                     }
@@ -112,6 +113,30 @@ class NetworkServiceAdapter constructor(context: Context) {
                 })
         )
     }
+
+    fun postAlbum(album: Album, onComplete: (response: JSONObject) -> Unit, onError: (error: VolleyError) -> Unit) {
+        val albumJson = JSONObject().apply {
+            put("name", album.name)
+            put("cover", album.cover)
+            put("releaseDate", album.releaseDate)
+            put("description", album.description)
+            put("genre", album.genre)
+            put("recordLabel", album.recordLabel)
+        }
+
+        instance.add(
+            postRequest("albums/",
+                albumJson,
+                Response.Listener { response ->
+                    onComplete(response)
+                },
+                Response.ErrorListener { error ->
+                    onError(error)
+                }
+            )
+        )
+    }
+
 
     private fun getRequest(path:String, responseListener: Response.Listener<String>, errorListener: Response.ErrorListener): StringRequest {
         return StringRequest(Request.Method.GET, BASE_URL + path, responseListener, errorListener)

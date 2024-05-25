@@ -33,4 +33,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/activity_item_lista_album"/>
 
+    <Button
+        android:id="@+id/button_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Álbum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
