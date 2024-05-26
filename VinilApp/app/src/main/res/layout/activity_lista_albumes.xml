@@ -17,11 +17,14 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
         <TextView
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ÁLBUMES"
             android:textColor="#FFFfff"
-            android:id="@+id/toolbar_title" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="22dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView

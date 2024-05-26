@@ -23,11 +23,14 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
             <TextView
+                android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CREAR ÁLBUM"
-                android:textColor="#FFFfff"
-                android:id="@+id/toolbar_title" />
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="22dp" />
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
@@ -51,7 +54,7 @@
         <EditText
             android:id="@+id/album_name"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
@@ -87,7 +90,7 @@
         <EditText
             android:id="@+id/edit_date"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
@@ -124,7 +127,7 @@
         <Spinner
             android:id="@+id/spinner_genero"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
@@ -157,7 +160,7 @@
         <Spinner
             android:id="@+id/spinner_record"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
@@ -192,7 +195,7 @@
         <EditText
             android:id="@+id/edit_imagen"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
@@ -229,7 +232,7 @@
         <EditText
             android:id="@+id/edit_descripcion"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="#CCCCFF"
