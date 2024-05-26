@@ -20,10 +20,13 @@ import edu.co.grupo4.vinilapp.views.MainActivity;
 
 import edu.co.grupo4.vinilapp.views.CrearAlbumActivity;
 import edu.co.grupo4.vinilapp.views.OptionsMenuUsuario;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 
 
-
-public class CrearAlbumActivityTest{
+public class FormularioTest{
     @Rule
     public ActivityScenarioRule<CrearAlbumActivity> activityScenarioRule =
             new ActivityScenarioRule<>(CrearAlbumActivity.class);
@@ -37,11 +40,22 @@ public class CrearAlbumActivityTest{
     public void clickCrearAlbumButton_opensCrearAlbumActivity() {
 
 
-        // "Agregar"
-        ViewInteraction agregarButton = onView(allOf(withId(R.id.button_agregar), isDisplayed()));
-        agregarButton.perform(click());
 
+        onView(withId(R.id.album_name))
+                .check(matches(isDisplayed()))
+                .perform(typeText("Test Album"), closeSoftKeyboard());
 
+        onView(withId(R.id.edit_imagen))
+                .check(matches(isDisplayed()))
+                .perform(typeText("http://example.com/image.jpg"), closeSoftKeyboard());
+
+        onView(withId(R.id.edit_descripcion))
+                .check(matches(isDisplayed()))
+                .perform(replaceText("Descripción del álbum"), closeSoftKeyboard());
+
+        onView(withId(R.id.edit_date))
+                .check(matches(isDisplayed()))
+                .perform(typeText("2024-05-25"), closeSoftKeyboard());
 
     }
 }
