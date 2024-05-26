@@ -1,9 +1,10 @@
 package edu.co.grupo4.vinilapp.model.data
 
 import java.io.Serializable
+import java.util.Date
 
 data class Album(
-   // val id : Int? = null
+    //val id : Int?,
      val name : String
     , val cover : String
     , val releaseDate : String

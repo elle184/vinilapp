@@ -18,4 +18,13 @@ enum class RecordLabel {
     };
 
     abstract fun statusName() : String
+
+
+
+
+companion object {
+    fun getNames(): List<String> {
+        return values().map { it.statusName() }
+    }
+}
 }

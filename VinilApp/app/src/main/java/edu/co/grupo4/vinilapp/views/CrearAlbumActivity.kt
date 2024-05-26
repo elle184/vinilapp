@@ -30,12 +30,13 @@ class CrearAlbumActivity : AppCompatActivity() {
         }
 
         val spinnerGenero: Spinner = findViewById(R.id.spinner_genero)
+
         val adapterG = ArrayAdapter(this, android.R.layout.simple_spinner_item, Genre.values())
         adapterG.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerGenero.adapter= adapterG
 
         val spinnerRecord: Spinner = findViewById(R.id.spinner_record)
-        val adapterR = ArrayAdapter(this, android.R.layout.simple_spinner_item, RecordLabel.values())
+        val adapterR = ArrayAdapter(this, android.R.layout.simple_spinner_item, RecordLabel.getNames())
         adapterR.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerRecord.adapter= adapterR
 
@@ -45,13 +46,17 @@ class CrearAlbumActivity : AppCompatActivity() {
             val urlImagen = findViewById<EditText>(R.id.edit_imagen).text.toString()
             val descripcion = findViewById<EditText>(R.id.edit_descripcion).text.toString()
             val release = findViewById<EditText>(R.id.edit_date).text.toString()
+            val generoSeleccionado = spinnerGenero.selectedItem.toString()
+            var recordSeleccionado = spinnerRecord.selectedItem.toString()
 
-            if (albumName.isNotEmpty() && spinnerGenero.isNotEmpty() && urlImagen.isNotEmpty() && descripcion.isNotEmpty() && release.isNotEmpty() && spinnerRecord.isNotEmpty()) {
+
+
+            if (albumName.isNotEmpty() && generoSeleccionado.isNotEmpty() && urlImagen.isNotEmpty() && descripcion.isNotEmpty() && release.isNotEmpty() && recordSeleccionado.isNotEmpty()) {
 
                 val album = Album(
                     name = albumName,
-                    genre = spinnerGenero.toString(),
-                    recordLabel = spinnerRecord.toString(),
+                    genre = generoSeleccionado,
+                    recordLabel = recordSeleccionado,
                     cover = urlImagen,
                     description = descripcion,
                     releaseDate = release
