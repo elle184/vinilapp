@@ -31,7 +31,7 @@ class DetalleAlbumActivity : AppCompatActivity() {
 
         if(album!=null){
             binding?.title?.text=album.name
-            binding?.headerImage?.load(album!!.cover)
+            binding?.headerImage?.load(album.cover)
             binding?.subtitle?.text=album.genre
             binding?.body?.text = album.description
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -37,11 +40,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74764994-c0d4-48c4-b10a-fed0fe8cddb7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2024_7_17_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2024_7_17_p__m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/Genre.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/Genre.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/RecordLabel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/RecordLabel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearAlbumActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearAlbumActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=ZY227HVT5S)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Maria Scoth\.android\avd\Copy_of_Medium_Phone_API_29.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/VinilApp">
       <ProjectState />
@@ -91,6 +91,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Maria Scoth/Documents/Maestria IS/ProyectoVinilos/vinilapp/VinilApp",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
