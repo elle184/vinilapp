@@ -1,8 +1,8 @@
 package edu.co.grupo4.vinilapp.model.data
-
+import java.io.Serializable
 data class Track(
-    val id : Int
-    , val name : String
-    , val duration : String
-    , val album : Album
-)
+    val id: Int
+    , val name: String
+    , val duration: String
+    , val album: String
+): Serializable

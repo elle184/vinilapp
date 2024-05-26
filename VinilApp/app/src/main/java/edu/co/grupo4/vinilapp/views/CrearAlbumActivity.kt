@@ -50,8 +50,8 @@ class CrearAlbumActivity : AppCompatActivity() {
 
                 val album = Album(
                     name = albumName,
-                    genre = spinnerGenero.toString(),
-                    recordLabel = spinnerRecord.toString(),
+                    genre = "Salsa",
+                    recordLabel ="Sony Music",
                     cover = urlImagen,
                     description = descripcion,
                     releaseDate = release

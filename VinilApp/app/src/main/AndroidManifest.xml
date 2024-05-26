@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VinilApp"
         tools:targetApi="31">
         <activity
+            android:name=".views.ListaTrackActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.CrearPremioActivity"
             android:exported="false" />
         <activity
