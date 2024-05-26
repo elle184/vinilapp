@@ -43,11 +43,10 @@ public class OptionsMenuActivityTest {
         ViewInteraction guestOptionButton = onView(allOf(withId(R.id.imgBtnVisitante), isDisplayed()));
         guestOptionButton.perform(click());
 
-        ViewInteraction musicianOptionButton = onView(allOf(withId(R.id.btnListaArtistas), isDisplayed()));
+        ViewInteraction musicianOptionButton = onView(allOf(withId(R.id.btnListAlbum), isDisplayed()));
         musicianOptionButton.perform(click());
     }
 
-    @Test
     public void selectCollectorsOption() {
         ViewInteraction albumOptionButton = onView(allOf(withId(R.id.imgBtnVisitante), isDisplayed()));
         albumOptionButton.perform(click());
