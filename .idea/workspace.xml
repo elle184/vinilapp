@@ -5,6 +5,16 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-34/data/res/layout/simple_spinner_item.xml">
+        <config>
+          <theme>@style/Theme.VinilApp</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml">
+        <config>
+          <theme>@style/Theme.VinilApp</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_item_lista_artista.xml">
         <config>
           <theme>@style/Theme.VinilApp</theme>
@@ -28,15 +38,10 @@
   <component name="ChangeListManager">
     <list default="true" id="74764994-c0d4-48c4-b10a-fed0fe8cddb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/data/Album.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/data/Album.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/data/Track.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/data/Track.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/service/network/NetworkServiceAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/service/network/NetworkServiceAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/Genre.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/Genre.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/RecordLabel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/model/enums/RecordLabel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearAlbumActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearAlbumActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearPremioActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/CrearPremioActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/ListaArtistasActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/ListaArtistasActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

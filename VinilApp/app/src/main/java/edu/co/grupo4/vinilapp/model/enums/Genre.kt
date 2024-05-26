@@ -5,4 +5,5 @@ enum class Genre {
     Salsa,
     Folk,
     Rock,
+
 }
