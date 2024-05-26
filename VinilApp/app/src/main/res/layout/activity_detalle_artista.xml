@@ -59,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/logo_vinilapp"
+                android:contentDescription="Imagen del artista"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
