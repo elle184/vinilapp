@@ -26,6 +26,14 @@ class AlbumViewModel(application : Application) : AndroidViewModel(application) 
     val isNetworkErrorShownLv : LiveData<Boolean>
             get() = isNetworkErrorShown
 
+    private var successMessage = MutableLiveData<String?>()
+    val successMessageLv: MutableLiveData<String?>
+        get() = successMessage
+
+    private var errorMessage = MutableLiveData<String?>()
+    val errorMessageLv: MutableLiveData<String?>
+        get() = errorMessage
+
     init {
         refreshDataFromNetwork()
     }
@@ -40,12 +48,30 @@ class AlbumViewModel(application : Application) : AndroidViewModel(application) 
         })
     }
 
+    fun crearAlbum(album: Album) {
+        albumRepositorio.agregarAlbum(album,
+            onComplete = {
+                successMessage.value = "Álbum agregado exitosamente"
+                refreshDataFromNetwork()
+            },
+            onError = {
+                errorMessage.value = "Error al agregar el álbum: ${it.message}"
+                eventNetworkError.value = true
+            }
+        )
+    }
+
     fun onNetworkErrorShown() {
         isNetworkErrorShown.value = true
     }
 
+    fun limpiarMensajes() {
+        successMessage.value = null
+        errorMessage.value = null
+    }
+
     class Factory(val app : Application) : ViewModelProvider.Factory {
-        fun <T : ViewModel> createModel(modelClass : Class<T>) : T {
+        override fun <T : ViewModel> create(modelClass : Class<T>) : T {
             if (modelClass.isAssignableFrom(AlbumViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
                 return AlbumViewModel(app) as T

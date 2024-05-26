@@ -23,7 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DETALLE ARTISTA"
-            android:textColor="#FFFfff" />
+            android:textColor="#FFFfff"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="22dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
@@ -54,26 +57,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/subhead"
-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="I'm a subhead"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title" />
-
             <ImageView
                 android:id="@+id/header_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/logo_vinilapp"
+                android:contentDescription="Imagen del artista"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subhead" />
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
             <TextView
                 android:id="@+id/date"

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".views.OptionsMenuColeccionista">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="4dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENÚ DE OPCIONES"
+            android:textColor="#FFFfff"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="22dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageButton
+        android:id="@+id/btnListaArtistas"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginBottom="37dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="Imagen del botón para acceder a los Artistas"
+        android:src="@drawable/artistas"
+        app:layout_constraintBottom_toTopOf="@+id/btnListAlbum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnListAlbum"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="68dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/album"
+        android:contentDescription="Imagen del botón para acceder a los Álbumes"
+        app:layout_constraintBottom_toTopOf="@+id/btnListColeccionista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListaArtistas"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnListColeccionista"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="91dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/collector"
+        android:contentDescription="Imagen del botón para acceder a los Coleccionistas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListAlbum"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageButton
+        android:id="@+id/btnPremio"
+        android:layout_width="83dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="91dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/coleccionista"
+        android:contentDescription="Imagen del botón para acceder a los Premios"
+        app:layout_constraintBottom_toBottomOf="@+id/btnListColeccionista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListAlbum"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="152dp"
+        android:text="Artistas"
+        android:textColorLink="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+  
+
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="184dp"
+        android:text="Album"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnListAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="88dp"
+        android:text="Coleccionista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="160dp"
+        android:text="Premios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    
+

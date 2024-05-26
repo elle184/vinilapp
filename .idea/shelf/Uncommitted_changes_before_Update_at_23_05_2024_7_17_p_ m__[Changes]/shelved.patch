@@ -1,0 +1,520 @@
+Index: VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.co.grupo4.vinilapp.views\r\n\r\nimport android.os.Bundle\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.view.ViewCompat\r\nimport androidx.core.view.WindowInsetsCompat\r\nimport coil.load\r\nimport edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding\r\nimport edu.co.grupo4.vinilapp.model.data.Artista\r\n\r\nclass DetalleArtistaActivity : AppCompatActivity() {\r\n\r\n    private var binding: ActivityDetalleArtistaBinding?=null\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        binding= ActivityDetalleArtistaBinding.inflate(layoutInflater)\r\n        setContentView(binding?.root)\r\n\r\n        ViewCompat.setOnApplyWindowInsetsListener(binding?.main!!) { v, insets ->\r\n            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())\r\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)\r\n            insets\r\n        }\r\n\r\n        var artista: Artista?= null\r\n        if(intent.hasExtra(ListaArtistasActivity.NEXT_SCREEN)){\r\n           artista = intent.getSerializableExtra(ListaArtistasActivity.NEXT_SCREEN) as Artista\r\n        }\r\n\r\n        if(artista!=null){\r\n            binding?.title?.text=artista.nombre\r\n            binding?.headerImage?.load(artista!!.imagen)\r\n            binding?.date?.text=artista.nacimiento\r\n            binding?.body?.text=artista.descripcion\r\n        }\r\n    }\r\n\r\n    override fun onDestroy() {\r\n        super.onDestroy()\r\n        binding = null\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt b/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt
+--- a/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ b/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt	(date 1716351095845)
+@@ -29,7 +29,7 @@
+ 
+         if(artista!=null){
+             binding?.title?.text=artista.nombre
+-            binding?.headerImage?.load(artista!!.imagen)
++            binding?.headerImage?.load(artista.imagen)
+             binding?.date?.text=artista.nacimiento
+             binding?.body?.text=artista.descripcion
+         }
+Index: VinilApp/app/src/main/res/layout/fragment_first.xml
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/fragment_first.xml b/VinilApp/app/src/main/res/layout/fragment_first.xml
+deleted file mode 100644
+--- a/VinilApp/app/src/main/res/layout/fragment_first.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ /dev/null	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
+@@ -1,35 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".FirstFragment">
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:padding="16dp">
+-
+-        <Button
+-            android:id="@+id/button_first"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="@string/next"
+-            app:layout_constraintBottom_toTopOf="@id/textview_first"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toTopOf="parent" />
+-
+-        <TextView
+-            android:id="@+id/textview_first"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="16dp"
+-            android:text="@string/lorem_ipsum"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/button_first" />
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: VinilApp/app/src/main/res/layout/fragment_second2.xml
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/fragment_second2.xml b/VinilApp/app/src/main/res/layout/fragment_second2.xml
+deleted file mode 100644
+--- a/VinilApp/app/src/main/res/layout/fragment_second2.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ /dev/null	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
+@@ -1,35 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".Second2Fragment">
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:padding="16dp">
+-
+-        <Button
+-            android:id="@+id/button_second"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="@string/previous"
+-            app:layout_constraintBottom_toTopOf="@id/textview_second"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toTopOf="parent" />
+-
+-        <TextView
+-            android:id="@+id/textview_second"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="16dp"
+-            android:text="@string/lorem_ipsum"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/button_second" />
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: VinilApp/app/src/main/res/layout/fragment_second.xml
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/fragment_second.xml b/VinilApp/app/src/main/res/layout/fragment_second.xml
+deleted file mode 100644
+--- a/VinilApp/app/src/main/res/layout/fragment_second.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ /dev/null	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
+@@ -1,35 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".SecondFragment">
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:padding="16dp">
+-
+-        <Button
+-            android:id="@+id/button_second"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="@string/previous"
+-            app:layout_constraintBottom_toTopOf="@id/textview_second"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toTopOf="parent" />
+-
+-        <TextView
+-            android:id="@+id/textview_second"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="16dp"
+-            android:text="@string/lorem_ipsum"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/button_second" />
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: VinilApp/app/src/main/res/layout/fragment_collector_list.xml
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/fragment_collector_list.xml b/VinilApp/app/src/main/res/layout/fragment_collector_list.xml
+deleted file mode 100644
+--- a/VinilApp/app/src/main/res/layout/fragment_collector_list.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ /dev/null	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
+@@ -1,26 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".adapters.CollectorListFragment">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-
+-
+-
+-        <androidx.recyclerview.widget.RecyclerView
+-            android:id="@+id/fragments_rv"
+-            android:layout_width="match_parent"
+-            android:layout_height="558dp"
+-            android:clipToPadding="false"
+-            android:padding="16dp" >
+-
+-        </androidx.recyclerview.widget.RecyclerView>
+-
+-
+-
+-
+-
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: VinilApp/app/src/main/res/layout/fragment_first2.xml
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/fragment_first2.xml b/VinilApp/app/src/main/res/layout/fragment_first2.xml
+deleted file mode 100644
+--- a/VinilApp/app/src/main/res/layout/fragment_first2.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ /dev/null	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
+@@ -1,35 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".First2Fragment">
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:padding="16dp">
+-
+-        <Button
+-            android:id="@+id/button_first"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="@string/next"
+-            app:layout_constraintBottom_toTopOf="@id/textview_first"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toTopOf="parent" />
+-
+-        <TextView
+-            android:id="@+id/textview_first"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="16dp"
+-            android:text="@string/lorem_ipsum"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/button_first" />
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.co.grupo4.vinilapp.views\r\n\r\nimport android.os.Bundle\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.view.ViewCompat\r\nimport androidx.core.view.WindowInsetsCompat\r\nimport edu.co.grupo4.vinilapp.views.ListaColeccionistaActivity\r\nimport edu.co.grupo4.vinilapp.R\r\n\r\nimport edu.co.grupo4.vinilapp.databinding.ActivityDetalleColeccionistaBinding\r\n\r\nimport edu.co.grupo4.vinilapp.model.data.Collector\r\n\r\nclass DetalleColeccionistaActivity : AppCompatActivity() {\r\n    var binding: ActivityDetalleColeccionistaBinding?=null\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        binding= ActivityDetalleColeccionistaBinding.inflate(layoutInflater)\r\n        setContentView(R.layout.activity_detalle_coleccionista)\r\n        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->\r\n            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())\r\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)\r\n            insets\r\n        }\r\n\r\n        var coleccionista: Collector?= null\r\n        if(intent.hasExtra(ListaColeccionistaActivity.NEXT_SCREEN)){\r\n            coleccionista = intent.getSerializableExtra(ListaColeccionistaActivity.NEXT_SCREEN) as Collector\r\n        }\r\n\r\n        if(coleccionista!=null){\r\n            binding?.name?.text=coleccionista.name\r\n            binding?.telephone?.text=coleccionista.telephone\r\n            binding?.email?.text=coleccionista.email\r\n\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt b/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt
+--- a/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ b/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt	(date 1716351988504)
+@@ -6,18 +6,21 @@
+ import androidx.core.view.WindowInsetsCompat
+ import edu.co.grupo4.vinilapp.views.ListaColeccionistaActivity
+ import edu.co.grupo4.vinilapp.R
++import edu.co.grupo4.vinilapp.databinding.ActivityDetalleArtistaBinding
+ 
+ import edu.co.grupo4.vinilapp.databinding.ActivityDetalleColeccionistaBinding
++import edu.co.grupo4.vinilapp.model.data.Artista
+ 
+ import edu.co.grupo4.vinilapp.model.data.Collector
+ 
+ class DetalleColeccionistaActivity : AppCompatActivity() {
+-    var binding: ActivityDetalleColeccionistaBinding?=null
++    private var binding: ActivityDetalleColeccionistaBinding?=null
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         binding= ActivityDetalleColeccionistaBinding.inflate(layoutInflater)
+-        setContentView(R.layout.activity_detalle_coleccionista)
+-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
++        setContentView(binding?.root)
++
++        ViewCompat.setOnApplyWindowInsetsListener(binding?.main!!) { v, insets ->
+             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+             insets
+@@ -35,4 +38,8 @@
+ 
+         }
+     }
+-}
+\ No newline at end of file
++    override fun onDestroy() {
++        super.onDestroy()
++        binding = null
++    }
++}
+Index: VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".views.DetalleColeccionistaActivity\">\r\n    <androidx.appcompat.widget.Toolbar\r\n        android:id=\"@+id/detail_toolbar\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"?attr/actionBarSize\"\r\n        android:background=\"?attr/colorPrimary\"\r\n        android:elevation=\"4dp\"\r\n        android:theme=\"@style/ThemeOverlay.AppCompat.ActionBar\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:popupTheme=\"@style/ThemeOverlay.AppCompat.Light\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/toolbar_title\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"DETALLE COLECCIONISTA\"\r\n            android:textColor=\"#FFFfff\" />\r\n    </androidx.appcompat.widget.Toolbar>\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:layout_width=\"337dp\"\r\n        android:layout_height=\"492dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:cardCornerRadius=\"10dp\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:background=\"#ffebfb\"\r\n            android:padding=\"10dp\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/Name\"\r\n                style=\"@style/TextAppearance.MaterialComponents.Headline6\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"4dp\"\r\n                android:textStyle=\"bold\"\r\n                android:text=\"Javier Scoth\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\" />\r\n\r\n\r\n            <TextView\r\n                android:id=\"@+id/name\"\r\n                style=\"@style/TextAppearance.MaterialComponents.Subtitle2\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"200dp\"\r\n                android:text=\"Javier Scoth\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@id/name\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/telephone\"\r\n                style=\"@style/TextAppearance.MaterialComponents.Subtitle2\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"302 6748335\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteY=\"195dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/email\"\r\n                style=\"@style/TextAppearance.MaterialComponents.Body1\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"mariascoth@html.com\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteY=\"37dp\" />\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n    </androidx.cardview.widget.CardView>\r\n</androidx.constraintlayout.widget.ConstraintLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml b/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml
+--- a/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ b/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml	(date 1716352901990)
+@@ -1,94 +1,103 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout
+-    xmlns:android="http://schemas.android.com/apk/res/android"
++<layout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:id="@+id/main"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".views.DetalleColeccionistaActivity">
+-    <androidx.appcompat.widget.Toolbar
+-        android:id="@+id/detail_toolbar"
+-        android:layout_width="match_parent"
+-        android:layout_height="?attr/actionBarSize"
+-        android:background="?attr/colorPrimary"
+-        android:elevation="4dp"
+-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
++    xmlns:tools="http://schemas.android.com/tools">
++
++    <data>
++        <variable
++            name="Collector"
++            type="edu.co.grupo4.vinilapp.model.data.Collector"/>
++    </data>
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:id="@+id/main"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        tools:context=".views.DetalleColeccionistaActivity">
++
++        <androidx.appcompat.widget.Toolbar
++            android:id="@+id/detail_toolbar"
++            android:layout_width="match_parent"
++            android:layout_height="?attr/actionBarSize"
++            android:background="?attr/colorPrimary"
++            android:elevation="4dp"
++            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
++            app:layout_constraintTop_toTopOf="parent"
++            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+ 
+-        <TextView
+-            android:id="@+id/toolbar_title"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:text="DETALLE COLECCIONISTA"
+-            android:textColor="#FFFfff" />
+-    </androidx.appcompat.widget.Toolbar>
++            <TextView
++                android:id="@+id/toolbar_title"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="DETALLE COLECCIONISTA"
++                android:textColor="#FFFfff" />
++        </androidx.appcompat.widget.Toolbar>
+ 
+-    <androidx.cardview.widget.CardView
+-        android:layout_width="337dp"
+-        android:layout_height="492dp"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:cardCornerRadius="10dp"
+-        app:layout_constraintTop_toTopOf="parent">
++        <androidx.cardview.widget.CardView
++            android:layout_width="337dp"
++            android:layout_height="492dp"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:cardCornerRadius="10dp"
++            app:layout_constraintTop_toTopOf="parent">
+ 
+-        <androidx.constraintlayout.widget.ConstraintLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            android:background="#ffebfb"
+-            android:padding="10dp">
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:background="#ffebfb"
++                android:padding="10dp">
+ 
+-            <TextView
+-                android:id="@+id/Name"
+-                style="@style/TextAppearance.MaterialComponents.Headline6"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:layout_marginTop="4dp"
+-                android:textStyle="bold"
+-                android:text="Javier Scoth"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintHorizontal_bias="0.0"
+-                app:layout_constraintStart_toStartOf="parent"
+-                tools:ignore="MissingConstraints" />
++                <TextView
++                    android:id="@+id/Name"
++                    style="@style/TextAppearance.MaterialComponents.Headline6"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="4dp"
++                    android:textStyle="bold"
++                    android:text="@{Collector.name}"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.0"
++                    app:layout_constraintStart_toStartOf="parent"
++                    tools:ignore="MissingConstraints" />
+ 
+ 
+-            <TextView
+-                android:id="@+id/name"
+-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:layout_marginTop="200dp"
+-                android:text="Javier Scoth"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintHorizontal_bias="0.0"
+-                app:layout_constraintStart_toStartOf="parent"
+-                app:layout_constraintTop_toBottomOf="@id/name" />
++                <TextView
++                    android:id="@+id/name"
++                    style="@style/TextAppearance.MaterialComponents.Subtitle2"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="200dp"
++                    android:text="Javier Scoth"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.0"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toBottomOf="@id/name" />
+ 
+-            <TextView
+-                android:id="@+id/telephone"
+-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:text="302 6748335"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintHorizontal_bias="0.0"
+-                app:layout_constraintStart_toStartOf="parent"
+-                tools:ignore="MissingConstraints"
+-                tools:layout_editor_absoluteY="195dp" />
++                <TextView
++                    android:id="@+id/telephone"
++                    style="@style/TextAppearance.MaterialComponents.Subtitle2"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="@{Collector.telephone}"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.0"
++                    app:layout_constraintStart_toStartOf="parent"
++                    tools:ignore="MissingConstraints"
++                    tools:layout_editor_absoluteY="195dp" />
+ 
+-            <TextView
+-                android:id="@+id/email"
+-                style="@style/TextAppearance.MaterialComponents.Body1"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:text="mariascoth@html.com"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintHorizontal_bias="0.0"
+-                app:layout_constraintStart_toStartOf="parent"
+-                tools:ignore="MissingConstraints"
+-                tools:layout_editor_absoluteY="37dp" />
+-        </androidx.constraintlayout.widget.ConstraintLayout>
+-    </androidx.cardview.widget.CardView>
+-</androidx.constraintlayout.widget.ConstraintLayout>
++                <TextView
++                    android:id="@+id/email"
++                    style="@style/TextAppearance.MaterialComponents.Body1"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="@{Collector.email}"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.0"
++                    app:layout_constraintStart_toStartOf="parent"
++                    tools:ignore="MissingConstraints"
++                    tools:layout_editor_absoluteY="37dp" />
++            </androidx.constraintlayout.widget.ConstraintLayout>
++        </androidx.cardview.widget.CardView>
++    </androidx.constraintlayout.widget.ConstraintLayout>
++</layout>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"NONE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"74764994-c0d4-48c4-b10a-fed0fe8cddb7\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ClangdSettings\">\r\n    <option name=\"formatViaClangd\" value=\"false\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 3\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2gOEh4IB04uRhr3leUGzpg0juqb\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\r\n    \"RunOnceActivity.readMode.enableVisualFormatting\": \"true\",\r\n    \"cf.first.check.clang-format\": \"false\",\r\n    \"cidr.known.project.marker\": \"true\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Maria Scoth/Documents/Maestria IS/ProyectoVinilos/vinilapp/VinilApp\",\r\n    \"settings.editor.selected.configurable\": \"advanced.settings\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"74764994-c0d4-48c4-b10a-fed0fe8cddb7\" name=\"Changes\" comment=\"\" />\r\n      <created>1715560344487</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715560344487</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fb526af0859bbdb02e95acb96b2a4db10f67ee8c)
++++ b/.idea/workspace.xml	(date 1716509651588)
+@@ -4,7 +4,17 @@
+     <option name="autoReloadType" value="NONE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="74764994-c0d4-48c4-b10a-fed0fe8cddb7" name="Changes" comment="" />
++    <list default="true" id="74764994-c0d4-48c4-b10a-fed0fe8cddb7" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleArtistaActivity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/java/edu/co/grupo4/vinilapp/views/DetalleColeccionistaActivity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/activity_detalle_coleccionista.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/fragment_collector_list.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/fragment_first.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/fragment_first2.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/fragment_second.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/VinilApp/app/src/main/res/layout/fragment_second2.xml" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -19,9 +29,9 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 3
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 3
++}</component>
+   <component name="ProjectId" id="2gOEh4IB04uRhr3leUGzpg0juqb" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+@@ -37,7 +47,7 @@
+     "cidr.known.project.marker": "true",
+     "ignore.virus.scanning.warn.message": "true",
+     "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/Maria Scoth/Documents/Maestria IS/ProyectoVinilos/vinilapp/VinilApp",
++    "last_opened_file_path": "C:/Users/Maria Scoth/Documents/Maestria IS/ProyectoVinilos/vinilapp",
+     "settings.editor.selected.configurable": "advanced.settings"
+   }
+ }]]></component>
